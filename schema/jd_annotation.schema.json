@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:da-job-shift:schema:jd-annotation",
+  "title": "Job description annotation (stage 2 of the Data Analyst job-shift study)",
+  "description": "One record per job description per annotator. Every judgement carries a verbatim evidence quote so a script can check it against the source text. Skill ids come from taxonomy/skills.yaml; the taxonomy version is recorded so results stay reproducible.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "taxonomy_version", "doc_id", "era", "annotator", "tasks", "ai_roles", "skills", "soft_skills", "seniority", "years_experience", "degree", "languages", "work_mode", "salary", "role_family", "annotator_confidence"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "taxonomy_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "doc_id": {"type": "string", "pattern": "^[a-f0-9]{16}$", "description": "The corpus doc_id (first 16 hex chars of the SHA-256 of the cleaned text)."},
+    "era": {"type": "string", "enum": ["2022", "2026"]},
+    "annotator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "description": "Model id or worker label, e.g. model-name-1 or human-A. Never a person's real name."},
+        "kind": {"type": "string", "enum": ["llm", "human"]},
+        "prompt_version": {"type": "string"}
+      }
+    },
+    "tasks": {
+      "type": "array", "minItems": 1, "maxItems": 25,
+      "description": "What the job holder DOES. One item per distinct duty sentence or bullet.",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["category", "evidence"],
+        "properties": {
+          "category": {"type": "string", "enum": [
+            "reporting_dashboards", "ad_hoc_analysis_insights", "data_preparation_cleaning", "data_modeling_warehouse", "pipelines_etl_automation",
+            "experimentation_ab_testing", "forecasting_predictive_modeling", "metrics_kpi_definition", "data_quality_governance", "stakeholder_requirements",
+            "presenting_storytelling", "building_ai_ml_features", "deploying_or_monitoring_models", "process_improvement", "team_leadership_mentoring",
+            "tool_administration", "research_market_customer", "other"
+          ]},
+          "summary": {"type": "string", "maxLength": 200, "description": "Optional short paraphrase in English."},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "ai_roles": {
+      "type": "array", "maxItems": 10,
+      "description": "How AI appears in the posting. Empty array = AI is not mentioned at all. Use 'ai_mentioned_only' when AI appears only as a buzzword with no role.",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["category", "evidence"],
+        "properties": {
+          "category": {"type": "string", "enum": [
+            "ai_as_analyst_tool", "ai_as_product_team_builds", "ai_governance_ethics_risk", "ai_data_preparation_for_models",
+            "ai_literacy_expected", "ai_in_company_description_only", "ai_mentioned_only"
+          ]},
+          "named_tools": {"type": "array", "items": {"type": "string", "maxLength": 60}, "maxItems": 10, "description": "Tools named in the quote, e.g. ChatGPT, Copilot, Claude Code. Verbatim spelling."},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "skills": {
+      "type": "array", "maxItems": 60,
+      "description": "Hard skills and tools, normalised to taxonomy ids. One item per skill id (merge repeated mentions into one item with the strongest requirement level).",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["skill_id", "requirement_level", "evidence"],
+        "properties": {
+          "skill_id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$", "description": "Must exist in taxonomy/skills.yaml (checked by validate_annotations.py). Use 'other' plus `raw_term` for a skill the taxonomy lacks."},
+          "raw_term": {"type": "string", "maxLength": 80, "description": "The surface form in the posting, e.g. 'Power BI', 'LookML'. Required when skill_id is 'other'."},
+          "requirement_level": {"type": "string", "enum": ["required", "preferred", "mentioned"]},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "soft_skills": {
+      "type": "array", "maxItems": 20,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["category", "evidence"],
+        "properties": {
+          "category": {"type": "string", "enum": [
+            "communication", "presentation", "stakeholder_management", "problem_solving_critical_thinking", "attention_to_detail", "teamwork_collaboration",
+            "business_acumen", "ownership_proactivity", "time_management_prioritisation", "curiosity_learning", "leadership_mentoring", "adaptability_resilience", "other"
+          ]},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "seniority": {
+      "type": "object", "additionalProperties": false,
+      "required": ["level", "evidence"],
+      "properties": {
+        "level": {"type": "string", "enum": ["intern", "junior", "mid", "senior", "lead", "manager", "head_director", "unspecified"]},
+        "evidence": {"$ref": "#/$defs/evidence_or_null"}
+      }
+    },
+    "years_experience": {
+      "type": "object", "additionalProperties": false,
+      "required": ["min_years", "max_years", "evidence"],
+      "properties": {
+        "min_years": {"type": ["number", "null"], "minimum": 0, "maximum": 30},
+        "max_years": {"type": ["number", "null"], "minimum": 0, "maximum": 40},
+        "evidence": {"$ref": "#/$defs/evidence_or_null"}
+      }
+    },
+    "degree": {
+      "type": "object", "additionalProperties": false,
+      "required": ["level", "fields", "evidence"],
+      "properties": {
+        "level": {"type": "string", "enum": ["none_stated", "college_diploma", "bachelor", "master", "phd", "degree_not_required_explicitly"]},
+        "fields": {"type": "array", "items": {"type": "string", "maxLength": 60}, "maxItems": 10},
+        "evidence": {"$ref": "#/$defs/evidence_or_null"}
+      }
+    },
+    "languages": {
+      "type": "array", "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["language", "level", "evidence"],
+        "properties": {
+          "language": {"type": "string", "enum": ["english", "vietnamese", "japanese", "chinese", "korean", "other"]},
+          "level": {"type": "string", "enum": ["required_fluent", "required_working", "preferred", "unspecified"]},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "work_mode": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode", "evidence"],
+      "properties": {
+        "mode": {"type": "string", "enum": ["on_site", "hybrid", "remote", "unspecified"]},
+        "evidence": {"$ref": "#/$defs/evidence_or_null"}
+      }
+    },
+    "salary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mentioned", "evidence"],
+      "properties": {
+        "mentioned": {"type": "string", "enum": ["amount_given", "negotiable_or_competitive", "not_mentioned"]},
+        "evidence": {"$ref": "#/$defs/evidence_or_null"}
+      }
+    },
+    "role_family": {
+      "type": "object", "additionalProperties": false,
+      "required": ["family", "evidence"],
+      "description": "Is this really a Data Analyst family role? Lets stage 3 exclude off-target postings consistently.",
+      "properties": {
+        "family": {"type": "string", "enum": ["data_analyst", "bi_analyst_developer", "analytics_engineer", "data_scientist", "data_engineer", "business_analyst", "analytics_manager", "other"]},
+        "evidence": {"$ref": "#/$defs/evidence"}
+      }
+    },
+    "annotator_confidence": {"type": "number", "minimum": 0, "maximum": 1, "description": "The annotator's overall confidence. Not a probability; used only to pick records for human review."},
+    "notes": {"type": "string", "maxLength": 1000, "description": "Free text. Must not contain names, phone numbers or e-mails."}
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["quote"],
+      "description": "A verbatim substring of the cleaned job text, at most 300 characters. validate_annotations.py rejects a quote that is not found in the text.",
+      "properties": {
+        "quote": {"type": "string", "minLength": 3, "maxLength": 300},
+        "section": {"type": "string", "enum": ["title", "about_company", "responsibilities", "requirements", "nice_to_have", "benefits", "other"]}
+      }
+    },
+    "evidence_or_null": {
+      "oneOf": [{"$ref": "#/$defs/evidence"}, {"type": "null"}]
+    }
+  }
+}

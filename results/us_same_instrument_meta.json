@@ -1,0 +1,27 @@
+{
+  "source": "datanerd.tech pipeline, author's skill extraction",
+  "us_2022": {
+    "n_docs": 4239,
+    "months": [
+      "2022-11",
+      "2022-12"
+    ]
+  },
+  "us_2026": {
+    "n_docs": 20638,
+    "months": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06"
+    ],
+    "n_docs_with_any_skill": 18064
+  },
+  "vocabulary_2022": 105,
+  "vocabulary_2026": 545,
+  "shared_keywords": 97,
+  "keywords_reported": 323,
+  "note": "2026-only keywords (e.g. chatgpt, copilot, claude) cannot be compared: the 2022 extractor had no such keyword, so 0 in 2022 is by construction."
+}

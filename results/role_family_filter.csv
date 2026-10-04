@@ -1,0 +1,12 @@
+source,era,da_family,n_docs
+gsearch_us_2022,2022,False,905
+gsearch_us_2022,2022,True,2545
+tinix_vn,2022,True,45
+tinix_vn,2023,True,49
+tinix_vn,2024,True,76
+tinix_vn,2025,True,125
+tinix_vn,2026,True,242
+us_open_2026,2026,False,12959
+us_open_2026,2026,True,6381
+wayback_vn_2022,2022,False,27
+wayback_vn_2022,2022,True,96

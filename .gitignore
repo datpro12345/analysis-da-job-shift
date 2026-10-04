@@ -1,0 +1,26 @@
+# Data: never committed (see DATA_SOURCES.md and scripts/fetch_data.py)
+data/
+raw/
+corpus/
+*.parquet
+*.jsonl
+!examples/synthetic/corpus.jsonl
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Local outputs and settings
+out/
+.env
+.env.*
+.claude/
+.DS_Store
+
+# Not published: Vietnamese theme tables are produced locally only
+results/themes_vi_*.csv
