@@ -1,0 +1,444 @@
+# Skill and tool taxonomy for the Data Analyst job-shift study.
+#
+# This is a DATA FILE, versioned on purpose. Every result table names the
+# taxonomy version it was produced with, so a later edit (a new tool, a fixed
+# pattern) never silently changes an old number.
+#
+# How matching works (extract_deterministic.py):
+#   * text is Unicode-NFC normalised first (Vietnamese letters stored in
+#     decomposed form would otherwise break word boundaries: "bị" looks like
+#     "bi" + a mark, and "BI" would match it);
+#   * `patterns` are Python regexes matched case-INsensitively;
+#   * `patterns_cs` are matched case-SENSITIVELY, for short tokens where case
+#     carries meaning (R, SAS vs SaaS, AI vs the Vietnamese word "ai" = who,
+#     BI vs "bi"/"bị", DAX, SAP, ETL vs "etl" is fine either way);
+#   * a document counts as mentioning a skill when ANY pattern hits at least
+#     once. We count documents, not mentions, so a long posting that repeats
+#     "SQL" ten times weighs the same as a short one that says it once.
+#
+# Vietnamese aliases are included where the Vietnamese market writes the term
+# in Vietnamese ("phân tích dữ liệu", "tiếng Anh", "kho dữ liệu"). Tool names
+# are almost always written in English in Vietnamese postings.
+#
+# Groups are for reading the results, not for matching.
+
+version: "1.0.0"
+updated: "2026-10-04"
+
+groups:
+  programming:        Programming and query languages
+  bi_visualization:   BI and visualisation tools
+  spreadsheets:       Spreadsheets and office tools
+  databases:          Databases and warehouses
+  data_engineering:   Data engineering and pipelines
+  cloud:              Cloud platforms
+  statistics_ml:      Statistics and machine learning
+  ai_genai:           AI and generative AI
+  analytics_methods:  Analysis methods and deliverables
+  business_tools:     Business systems and product analytics
+  data_management:    Data management and governance
+  soft_skills:        Soft skills
+  language:           Human languages
+  ways_of_working:    Ways of working
+
+skills:
+  # ---------------------------------------------------------------- programming
+  - id: sql
+    label: SQL
+    group: programming
+    patterns: ['\bsql\b', '\bmysql\b', '\bt-sql\b', '\bpl/?sql\b', '\bmssql\b', '\bpostgres(ql)?\b', '\bsql\s*server\b', '\btruy\s*vấn\b']
+  - id: python
+    label: Python
+    group: programming
+    patterns: ['\bpython\b', '\bpandas\b', '\bnumpy\b', '\bjupyter\b']
+  - id: r_lang
+    label: R
+    group: programming
+    # Bare "R" is only accepted next to list punctuation or a telling word:
+    # "SQL/R/Python", "R, Python", "R programming", "R Studio".
+    patterns_cs: ['(?<![A-Za-z0-9])R(?=\s*(?:[,/;)]|\bprogramming\b|\blanguage\b|\bstudio\b|\bscripts?\b|\bor\s|\band\s))', '(?<=[/(,])\s?R(?![A-Za-z0-9&])', '\bRStudio\b', '\bR-studio\b']
+    patterns: ['\btidyverse\b', '\bggplot2?\b', '\bdplyr\b', '\bshiny\b']
+  - id: vba_macros
+    label: VBA / macros
+    group: programming
+    patterns: ['\bvba\b', '\bmacros?\b']
+  - id: dax
+    label: DAX
+    group: programming
+    patterns_cs: ['\bDAX\b']
+  - id: power_query
+    label: Power Query
+    group: programming
+    patterns: ['\bpower\s*query\b']
+  - id: scala_java
+    label: Scala / Java
+    group: programming
+    patterns: ['\bscala\b', '\bjava\b(?!script)']
+  - id: sas
+    label: SAS
+    group: programming
+    patterns_cs: ['\bSAS\b']
+  - id: spss_stata
+    label: SPSS / Stata
+    group: programming
+    patterns: ['\bspss\b', '\bstata\b', '\bminitab\b', '\beviews\b']
+
+  # ------------------------------------------------------------ bi_visualization
+  - id: power_bi
+    label: Power BI
+    group: bi_visualization
+    patterns: ['\bpower\s*-?\s*bi\b', '\bpowerbi\b']
+  - id: tableau
+    label: Tableau
+    group: bi_visualization
+    patterns: ['\btableau\b']
+  - id: looker
+    label: Looker / LookML
+    group: bi_visualization
+    patterns: ['\blooker\b(?!\s*studio)', '\blookml\b']
+  - id: looker_studio
+    label: Looker Studio / Data Studio
+    group: bi_visualization
+    patterns: ['\blooker\s*studio\b', '\bgoogle\s*data\s*studio\b', '\bdata\s*studio\b']
+  - id: qlik
+    label: Qlik
+    group: bi_visualization
+    patterns: ['\bqlik(view|sense)?\b']
+  - id: other_bi_tools
+    label: Other BI tools (Metabase, Superset, Redash, MicroStrategy, Cognos, SAP BO)
+    group: bi_visualization
+    patterns: ['\bmetabase\b', '\bsuperset\b', '\bredash\b', '\bmicrostrategy\b', '\bcognos\b', '\bbusiness\s*objects\b', '\bsisense\b', '\bdomo\b', '\bgrafana\b']
+  - id: bi_generic
+    label: Business intelligence (the term)
+    group: bi_visualization
+    patterns: ['\bbusiness\s*intelligence\b']
+    patterns_cs: ['\bBI\b(?!\s*(?:đà|đa|đổ))']
+  - id: data_visualization
+    label: Data visualisation
+    group: bi_visualization
+    patterns: ['\bvisuali[sz]', '\btrực\s*quan\s*h[óo]a?\b', '\bbiểu\s*đồ\b', '\bcharts?\b']
+  - id: dashboard
+    label: Dashboards
+    group: bi_visualization
+    patterns: ['\bdashboards?\b']
+
+  # ---------------------------------------------------------------- spreadsheets
+  - id: excel
+    label: Excel
+    group: spreadsheets
+    patterns: ['\b(?:ms\s*|microsoft\s*)?excel\b(?!\s+(?:at|in)\b)', '\bpivot\s*tables?\b', '\bvlookup\b', '\bxlookup\b']
+  - id: google_sheets
+    label: Google Sheets / spreadsheets
+    group: spreadsheets
+    patterns: ['\bgoogle\s*sheets?\b', '\bspreadsheets?\b', '\bbảng\s*tính\b']
+  - id: powerpoint
+    label: PowerPoint
+    group: spreadsheets
+    patterns: ['\bpower\s*point\b', '\bppt\b', '\bslides?\b']
+
+  # ------------------------------------------------------------------ databases
+  - id: data_warehouse
+    label: Data warehouse (the concept)
+    group: databases
+    patterns: ['\bdata\s*warehous', '\bdwh?\b', '\bkho\s*dữ\s*liệu\b', '\bdata\s*mart\b', '\bdata\s*lake(house)?\b']
+  - id: bigquery
+    label: BigQuery
+    group: databases
+    patterns: ['\bbig\s*query\b']
+  - id: snowflake
+    label: Snowflake
+    group: databases
+    patterns: ['\bsnowflake\b']
+  - id: redshift
+    label: Amazon Redshift
+    group: databases
+    patterns: ['\bredshift\b']
+  - id: databricks
+    label: Databricks
+    group: databases
+    patterns: ['\bdatabricks\b']
+  - id: oracle
+    label: Oracle
+    group: databases
+    patterns: ['\boracle\b']
+  - id: sql_server
+    label: Microsoft SQL Server
+    group: databases
+    patterns: ['\bsql\s*server\b', '\bmssql\b', '\bssis\b', '\bssrs\b', '\bssas\b']
+  - id: mysql_postgres
+    label: MySQL / PostgreSQL
+    group: databases
+    patterns: ['\bmysql\b', '\bpostgres(ql)?\b', '\bmariadb\b']
+  - id: nosql
+    label: NoSQL (MongoDB, Cassandra, Elasticsearch)
+    group: databases
+    patterns: ['\bnosql\b', '\bmongo\s*db\b', '\bmongodb\b', '\bcassandra\b', '\belasticsearch\b', '\bdynamodb\b']
+  - id: big_data_stack
+    label: Big data stack (Hadoop, Hive, Spark, Kafka)
+    group: databases
+    patterns: ['\bhadoop\b', '\bhive\b', '\b(?:py)?spark\b', '\bkafka\b', '\bbig\s*data\b', '\bdữ\s*liệu\s*lớn\b', '\bclickhouse\b', '\bteradata\b']
+
+  # ----------------------------------------------------------- data_engineering
+  - id: etl
+    label: ETL / ELT
+    group: data_engineering
+    patterns: ['\betl\b', '\belt\b', '\bextract,?\s*transform', '\bdata\s*integration\b']
+  - id: data_pipeline
+    label: Data pipelines
+    group: data_engineering
+    patterns: ['\b(?:data|etl|elt|ingestion|analytics|reporting)\s*pipelines?\b', '\bpipelines?\s*(?:for|of)\s*data\b']
+  - id: airflow_orchestration
+    label: Airflow / orchestration
+    group: data_engineering
+    patterns: ['\bairflow\b', '\bdagster\b', '\bprefect\b', '\borchestrat']
+  - id: dbt
+    label: dbt
+    group: data_engineering
+    patterns: ['\bdbt\b']
+  - id: git
+    label: Git / version control
+    group: data_engineering
+    patterns: ['\bgit(hub|lab)?\b', '\bversion\s*control\b', '\bbitbucket\b']
+  - id: api_integration
+    label: APIs
+    group: data_engineering
+    patterns: ['\bapis?\b', '\brestful\b', '\brest\s*apis?\b', '\bwebhooks?\b']
+  - id: web_scraping
+    label: Web scraping / crawling
+    group: data_engineering
+    patterns: ['\bscrap(?:e|ing|er)\b', '\bcrawl']
+  - id: data_modeling
+    label: Data modelling
+    group: data_engineering
+    patterns: ['\bdata\s*model', '\bmô\s*hình\s*(?:hóa\s*)?dữ\s*liệu\b', '\bstar\s*schema\b', '\bdimensional\s*model', '\bfact\s*(?:and|/|&)\s*dimension']
+
+  # ---------------------------------------------------------------------- cloud
+  - id: aws
+    label: AWS
+    group: cloud
+    patterns: ['\baws\b', '\bamazon\s*web\s*services\b', '\bs3\b', '\bathena\b']
+  - id: azure
+    label: Microsoft Azure
+    group: cloud
+    patterns: ['\bazure\b', '\bsynapse\b', '\bmicrosoft\s*fabric\b', '\bfabric\s*(?:lakehouse|warehouse|notebook)']
+  - id: gcp
+    label: Google Cloud
+    group: cloud
+    patterns: ['\bgcp\b', '\bgoogle\s*cloud\b']
+  - id: cloud_generic
+    label: Cloud (the term)
+    group: cloud
+    patterns: ['\bcloud\b', '\bđám\s*mây\b']
+
+  # -------------------------------------------------------------- statistics_ml
+  - id: statistics
+    label: Statistics
+    group: statistics_ml
+    patterns: ['\bstatistic', '\bthống\s*kê\b', '\bhypothesis\b', '\bregression\b', '\bhồi\s*quy\b', '\bprobabilit']
+  - id: ab_testing
+    label: A/B testing and experimentation
+    group: statistics_ml
+    patterns: ['\ba/b\s*test', '\bab\s*test', '\bsplit\s*test', '\bexperiment', '\bthử\s*nghiệm\b']
+  - id: machine_learning
+    label: Machine learning
+    group: statistics_ml
+    patterns: ['\bmachine\s*learning\b', '\bhọc\s*máy\b', '\bscikit[- ]?learn\b', '\bsklearn\b', '\bxgboost\b', '\brandom\s*forest\b', '\bclassification\b', '\bclustering\b']
+    patterns_cs: ['\bML\b']
+  - id: predictive_modeling
+    label: Predictive modelling / forecasting
+    group: statistics_ml
+    patterns: ['\bpredictive\b', '\bforecast', '\bdự\s*báo\b', '\bdự\s*đoán\b', '\btime\s*series\b', '\bchuỗi\s*thời\s*gian\b']
+  - id: deep_learning_nlp
+    label: Deep learning / NLP
+    group: statistics_ml
+    patterns: ['\bdeep\s*learning\b', '\bneural\s*net', '\bhọc\s*sâu\b', '\bnlp\b', '\bnatural\s*language\b', '\btensorflow\b', '\bpytorch\b', '\bkeras\b', '\bcomputer\s*vision\b']
+
+  # ------------------------------------------------------------------- ai_genai
+  - id: generative_ai
+    label: Generative AI / LLM tools
+    group: ai_genai
+    patterns: ['\bchat\s*-?\s*gpt\b', '\bgenerative\s*ai\b', '\bgen\s*-?\s*ai\b', '\bllms?\b', '\blarge\s*language\s*models?\b', '\bprompt\s*(?:engineering|design)\b', '\bcopilot\b', '\bopenai\b', '\bclaude\b', '\bgemini\b', '\bai\s*agents?\b', '\bagentic\b', '\bai\s*assistants?\b', '\bai\s*tools?\b', '\bcông\s*cụ\s*ai\b', '\bai\s*tạo\s*sinh\b', '\brag\b', '\bvector\s*(?:db|database|store)\b']
+    patterns_cs: ['\bGPT-?\d', '\bLLM']
+  - id: ai_general
+    label: AI (any mention)
+    group: ai_genai
+    patterns: ['\bartificial\s*intelligence\b', '\btrí\s*tuệ\s*nhân\s*tạo\b', '\bai/ml\b', '\bai\s*(?:&|and|và)\s*ml\b']
+    patterns_cs: ['\bAI\b', '\bA\.I\.']
+  - id: automation
+    label: Automation
+    group: ai_genai
+    patterns: ['\bautomat', '\btự\s*động\s*h[óo]a?\b']
+  - id: rpa_low_code
+    label: RPA / low-code (Power Automate, UiPath, n8n, Zapier)
+    group: ai_genai
+    patterns: ['\brpa\b', '\buipath\b', '\bpower\s*automate\b', '\bpower\s*apps?\b', '\blow[- ]code\b', '\bno[- ]code\b', '\bn8n\b', '\bzapier\b', '\bmake\.com\b']
+
+  # ---------------------------------------------------------- analytics_methods
+  - id: reporting
+    label: Reporting
+    group: analytics_methods
+    patterns: ['\breport', '\bbáo\s*cáo\b']
+  - id: kpi_metrics
+    label: KPIs and metrics
+    group: analytics_methods
+    patterns: ['\bkpis?\b', '\bokrs?\b', '\bmetrics?\b', '\bchỉ\s*số\b']
+  - id: insights
+    label: Insights and recommendations
+    group: analytics_methods
+    patterns: ['\binsights?\b', '\brecommendations?\b', '\bđề\s*xuất\b']
+  - id: storytelling
+    label: Data storytelling
+    group: analytics_methods
+    patterns: ['\bstory\s*-?\s*telling\b', '\bkể\s*chuyện\b', '\bnarrative\b']
+  - id: segmentation_cohort_funnel
+    label: Segmentation, cohort and funnel analysis
+    group: analytics_methods
+    patterns: ['\bsegmentation\b', '\bphân\s*khúc\b', '\bcohorts?\b', '\bfunnels?\b', '\bchurn\b', '\bretention\b', '\bltv\b', '\blifetime\s*value\b', '\brfm\b']
+  - id: root_cause
+    label: Root-cause and diagnostic analysis
+    group: analytics_methods
+    patterns: ['\broot\s*cause', '\bdiagnos', '\bnguyên\s*nhân\b', '\bdeep[- ]dive', '\bvariance\s*analysis\b']
+  - id: data_mining
+    label: Data mining
+    group: analytics_methods
+    patterns: ['\bdata\s*mining\b', '\bkhai\s*(?:phá|thác)\s*dữ\s*liệu\b']
+  - id: data_cleaning
+    label: Data cleaning and preparation
+    group: analytics_methods
+    patterns: ['\bdata\s*(?:cleaning|cleansing|wrangling|preparation|prep)\b', '\bclean\s*(?:and\s*)?(?:transform|prepare)', '\blàm\s*sạch\s*dữ\s*liệu\b', '\bxử\s*lý\s*dữ\s*liệu\b']
+  - id: financial_analysis
+    label: Financial / commercial analysis
+    group: analytics_methods
+    patterns: ['\bfinancial\s*(?:analysis|model)', '\bp&l\b', '\bbudget', '\bphân\s*tích\s*tài\s*chính\b', '\bpricing\b', '\brevenue\b', '\bdoanh\s*thu\b']
+  - id: market_customer_analysis
+    label: Market and customer analysis
+    group: analytics_methods
+    patterns: ['\bmarket\s*(?:research|analysis|trends?)\b', '\bcustomer\s*(?:behaviou?r|analysis|insights?|journey)\b', '\bconsumer\s*(?:behaviou?r|insights?|research|trends?)\b', '\bhành\s*vi\s*khách\s*hàng\b', '\bnghiên\s*cứu\s*thị\s*trường\b']
+
+  # ------------------------------------------------------------- business_tools
+  - id: sap_erp
+    label: SAP / ERP systems
+    group: business_tools
+    patterns: ['\berp\b', '\boracle\s*(?:ebs|netsuite)\b', '\bnetsuite\b', '\bodoo\b']
+    patterns_cs: ['\bSAP\b']
+  - id: crm_salesforce
+    label: CRM / Salesforce / HubSpot
+    group: business_tools
+    patterns: ['\bcrm\b', '\bsalesforce\b', '\bsfdc\b', '\bhubspot\b', '\bzoho\b', '\bdynamics\s*365\b']
+  - id: google_analytics
+    label: Google Analytics / GA4 / Tag Manager
+    group: business_tools
+    patterns: ['\bgoogle\s*analytics\b', '\bga4\b', '\bgoogle\s*tag\s*manager\b', '\bgtm\b']
+  - id: product_analytics_tools
+    label: Product analytics tools (Mixpanel, Amplitude, Firebase, AppsFlyer)
+    group: business_tools
+    patterns: ['\bmixpanel\b', '\bamplitude\b', '\bfirebase\b', '\bappsflyer\b', '\bbraze\b', '\bclevertap\b', '\bsegment\.io\b']
+  - id: ads_platforms
+    label: Ads platforms (Google Ads, Meta Ads, TikTok Ads)
+    group: business_tools
+    patterns: ['\bgoogle\s*ads\b', '\bfacebook\s*ads\b', '\bmeta\s*ads\b', '\btiktok\s*ads\b', '\bads\s*manager\b', '\bperformance\s*marketing\b']
+  - id: ecommerce_platforms
+    label: E-commerce platforms (Shopee, Lazada, Tiki, Shopify)
+    group: business_tools
+    patterns: ['\bshopee\b', '\blazada\b', '\btiki\b', '\bshopify\b', '\be-?commerce\b', '\bthương\s*mại\s*điện\s*tử\b']
+  - id: jira_confluence
+    label: Jira
+    group: business_tools
+    patterns: ['\bjira\b', '\btrello\b', '\basana\b']
+    patterns_cs: ['\bNotion\b']
+
+  # ------------------------------------------------------------ data_management
+  - id: data_quality
+    label: Data quality
+    group: data_management
+    patterns: ['\bdata\s*quality\b', '\bchất\s*lượng\s*dữ\s*liệu\b', '\bdata\s*(?:accuracy|integrity|validation)\b', '\bdata\s*(?:checks?|testing)\b']
+  - id: data_governance
+    label: Data governance and stewardship
+    group: data_management
+    patterns: ['\bdata\s*governance\b', '\bquản\s*trị\s*dữ\s*liệu\b', '\bdata\s*steward', '\bdata\s*catalog', '\bmaster\s*data\b', '\bmetadata\b', '\bdata\s*lineage\b', '\bdata\s*owner']
+  - id: data_privacy_security
+    label: Data privacy, security and compliance
+    group: data_management
+    patterns: ['\bdata\s*privacy\b', '\bgdpr\b', '\bpdpa\b', '\bnghị\s*định\s*13\b', '\bdata\s*(?:security|protection)\b', '\bbảo\s*mật\s*(?:dữ\s*liệu|thông\s*tin)\b', '\bcompliance\b', '\btuân\s*thủ\b']
+  - id: documentation
+    label: Documentation
+    group: data_management
+    patterns: ['\bdocument(?:ation|ing|ed)?\b', '\bdata\s*dictionar', '\btài\s*liệu\s*h[óo]a\b']
+  - id: self_service_analytics
+    label: Self-service analytics / data literacy
+    group: data_management
+    patterns: ['\bself[- ]service\b', '\bdata\s*literacy\b', '\bdata[- ]driven\s*culture\b', '\benablement\b']
+
+  # ---------------------------------------------------------------- soft_skills
+  - id: communication
+    label: Communication
+    group: soft_skills
+    patterns: ['\bcommunicat', '\bgiao\s*tiếp\b']
+  - id: presentation
+    label: Presentation skills
+    group: soft_skills
+    patterns: ['\bpresent(?:ation|ing)\b', '\bthuyết\s*trình\b', '\btrình\s*bày\b']
+  - id: stakeholder_management
+    label: Stakeholder management
+    group: soft_skills
+    patterns: ['\bstakeholders?\b', '\bcross[- ]functional\b', '\bbusiness\s*partner', '\bcác\s*phòng\s*ban\b', '\bliên\s*phòng\b']
+  - id: problem_solving
+    label: Problem solving / critical thinking
+    group: soft_skills
+    patterns: ['\bproblem[- ]solving\b', '\bgiải\s*quyết\s*vấn\s*đề\b', '\bcritical\s*thinking\b', '\btư\s*duy\s*(?:phản\s*biện|logic|phân\s*tích)\b', '\banalytical\s*(?:thinking|mindset|skills?)\b', '\blogical\s*thinking\b']
+  - id: attention_to_detail
+    label: Attention to detail
+    group: soft_skills
+    patterns: ['\battention\s*to\s*detail', '\bdetail[- ]oriented\b', '\bmeticulous\b', '\bcẩn\s*thận\b', '\btỉ\s*mỉ\b', '\bchú\s*ý\s*(?:đến\s*)?chi\s*tiết\b']
+  - id: teamwork
+    label: Teamwork / collaboration
+    group: soft_skills
+    patterns: ['\bteam\s*-?\s*work\b', '\bteam\s*player\b', '\bcollaborat', '\blàm\s*việc\s*nhóm\b', '\bphối\s*hợp\b']
+  - id: business_acumen
+    label: Business acumen / commercial sense
+    group: soft_skills
+    patterns: ['\bbusiness\s*(?:acumen|sense|understanding|mindset)\b', '\bcommercial\s*(?:acumen|awareness|mindset)\b', '\btư\s*duy\s*kinh\s*doanh\b', '\bhiểu\s*biết\s*(?:về\s*)?kinh\s*doanh\b']
+  - id: ownership_proactive
+    label: Ownership / proactivity / self-starter
+    group: soft_skills
+    patterns: ['\bownership\b', '\bproactive', '\bself[- ]starter\b', '\bself[- ]motivated\b', '\bindependent(?:ly)?\b', '\bchủ\s*động\b', '\btinh\s*thần\s*trách\s*nhiệm\b', '\bcó\s*trách\s*nhiệm\b', '\bđộc\s*lập\b']
+  - id: time_management
+    label: Time management / prioritisation
+    group: soft_skills
+    patterns: ['\btime\s*management\b', '\bprioriti[sz]', '\bdeadlines?\b', '\bquản\s*lý\s*thời\s*gian\b', '\báp\s*lực\b', '\bfast[- ]paced\b']
+  - id: curiosity_learning
+    label: Curiosity / continuous learning
+    group: soft_skills
+    patterns: ['\bcurious\b', '\bcuriosity\b', '\blearning\s*(?:agility|mindset)\b', '\bcontinuous\s*learning\b', '\bgrowth\s*mindset\b', '\bham\s*học\b', '\bhọc\s*hỏi\b', '\bcầu\s*tiến\b']
+  - id: leadership_mentoring
+    label: Leadership / mentoring
+    group: soft_skills
+    patterns: ['\bleadership\b', '\bmentor', '\bcoach(?:ing)?\b', '\bmanage\s*(?:a\s*)?team\b', '\blãnh\s*đạo\b', '\bquản\s*lý\s*(?:đội|nhóm)\b', '\bđào\s*tạo\s*(?:nhân\s*viên|đội|nhóm|và\s*hướng\s*dẫn)\b', '\bhướng\s*dẫn\s*(?:nhân\s*viên|đội|nhóm|thành\s*viên)\b']
+
+  # ------------------------------------------------------------------- language
+  - id: english
+    label: English
+    group: language
+    patterns: ['\benglish\b', '\btiếng\s*anh\b', '\bielts\b', '\btoeic\b']
+  - id: other_language
+    label: Japanese / Chinese / Korean
+    group: language
+    patterns: ['\bjapanese\b', '\btiếng\s*nhật\b', '\bchinese\b', '\bmandarin\b', '\btiếng\s*(?:trung|hoa)\b', '\bkorean\b', '\btiếng\s*hàn\b', '\bjlpt\b', '\bhsk\b']
+
+  # ------------------------------------------------------------ ways_of_working
+  - id: agile_scrum
+    label: Agile / Scrum
+    group: ways_of_working
+    patterns: ['\bagile\b', '\bscrum\b', '\bsprints?\b', '\bkanban\b']
+  - id: requirements_gathering
+    label: Requirements gathering / business analysis
+    group: ways_of_working
+    patterns: ['\brequirements?\s*(?:gathering|analysis|elicitation)\b', '\bgather(?:ing)?\s*(?:business\s*)?requirements?\b', '\buser\s*stor(?:y|ies)\b', '\bthu\s*thập\s*yêu\s*cầu\b', '\bphân\s*tích\s*(?:yêu\s*cầu|nghiệp\s*vụ)\b']
+  - id: process_improvement
+    label: Process improvement / Lean Six Sigma
+    group: ways_of_working
+    patterns: ['\bprocess\s*improvement\b', '\blean\s*(?:six|sigma|manufacturing|management|methodolog|principles?|process)', '\bsix\s*sigma\b', '\bcải\s*tiến\s*quy\s*trình\b', '\boptimi[sz]e\s*process', '\btối\s*ưu\s*(?:hóa\s*)?quy\s*trình\b']
+  - id: project_management
+    label: Project management
+    group: ways_of_working
+    patterns: ['\bproject\s*management\b', '\bpmp\b', '\bquản\s*lý\s*dự\s*án\b', '\bproject\s*(?:plans?|timeline)\b']

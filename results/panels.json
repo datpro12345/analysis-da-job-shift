@@ -1,0 +1,82 @@
+{
+  "taxonomy_version": "1.0.0",
+  "cells": {
+    "US_2022": {
+      "n_docs": 2545,
+      "sources": [
+        "gsearch_us_2022"
+      ],
+      "share_vi": 0.0
+    },
+    "US_2026": {
+      "n_docs": 6381,
+      "sources": [
+        "us_open_2026"
+      ],
+      "share_vi": 0.0
+    },
+    "VN_2022": {
+      "n_docs": 141,
+      "sources": [
+        "tinix_vn",
+        "wayback_vn_2022"
+      ],
+      "share_vi": 0.688
+    },
+    "VN_2026": {
+      "n_docs": 242,
+      "sources": [
+        "tinix_vn"
+      ],
+      "share_vi": 0.744
+    },
+    "VN_platform_2022": {
+      "n_docs": 45,
+      "sources": [
+        "tinix_vn"
+      ],
+      "share_vi": 0.733
+    },
+    "VN_platform_2026": {
+      "n_docs": 242,
+      "sources": [
+        "tinix_vn"
+      ],
+      "share_vi": 0.744
+    }
+  },
+  "panels": {
+    "P1_us_2022_vs_2026": {
+      "question": "United States: Data Analyst family postings, Nov-Dec 2022 (Google Jobs set) vs Jan-Aug 2026 (open postings set).",
+      "a": "US_2022",
+      "b": "US_2026",
+      "strata": "seniority",
+      "n_a": 2545,
+      "n_b": 6381
+    },
+    "P2_vn_2022_vs_2026": {
+      "question": "Vietnam: 2022 (platform + archived portals) vs 2026 (platform).",
+      "a": "VN_2022",
+      "b": "VN_2026",
+      "strata": "seniority_region",
+      "n_a": 141,
+      "n_b": 242
+    },
+    "P3_us_vs_vn_2026": {
+      "question": "Cross-section 2026: Vietnam vs United States.",
+      "a": "US_2026",
+      "b": "VN_2026",
+      "strata": "seniority",
+      "n_a": 6381,
+      "n_b": 242
+    },
+    "S1_vn_platform_only": {
+      "question": "Same Vietnamese platform only, 2022 vs 2026 (no portal or channel change).",
+      "a": "VN_platform_2022",
+      "b": "VN_platform_2026",
+      "strata": "seniority_region",
+      "n_a": 45,
+      "n_b": 242
+    }
+  }
+}

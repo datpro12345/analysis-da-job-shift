@@ -1,0 +1,461 @@
+panel,cell,skill_id,group,label,n_docs,k,rate,wilson_low,wilson_high
+tinix_vn_trend,2022,sql,programming,SQL,45,17,0.3778,0.2511,0.5237
+tinix_vn_trend,2022,python,programming,Python,45,11,0.2444,0.1424,0.3867
+tinix_vn_trend,2022,r_lang,programming,R,45,5,0.1111,0.0484,0.235
+tinix_vn_trend,2022,vba_macros,programming,VBA / macros,45,2,0.0444,0.0123,0.1483
+tinix_vn_trend,2022,dax,programming,DAX,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,power_query,programming,Power Query,45,2,0.0444,0.0123,0.1483
+tinix_vn_trend,2022,scala_java,programming,Scala / Java,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,sas,programming,SAS,45,6,0.1333,0.0626,0.2618
+tinix_vn_trend,2022,spss_stata,programming,SPSS / Stata,45,5,0.1111,0.0484,0.235
+tinix_vn_trend,2022,power_bi,bi_visualization,Power BI,45,16,0.3556,0.2322,0.5016
+tinix_vn_trend,2022,tableau,bi_visualization,Tableau,45,5,0.1111,0.0484,0.235
+tinix_vn_trend,2022,looker,bi_visualization,Looker / LookML,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,looker_studio,bi_visualization,Looker Studio / Data Studio,45,2,0.0444,0.0123,0.1483
+tinix_vn_trend,2022,qlik,bi_visualization,Qlik,45,2,0.0444,0.0123,0.1483
+tinix_vn_trend,2022,other_bi_tools,bi_visualization,"Other BI tools (Metabase, Superset, Redash, MicroStrategy, Cognos, SAP BO)",45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,bi_generic,bi_visualization,Business intelligence (the term),45,18,0.4,0.2702,0.5455
+tinix_vn_trend,2022,data_visualization,bi_visualization,Data visualisation,45,5,0.1111,0.0484,0.235
+tinix_vn_trend,2022,dashboard,bi_visualization,Dashboards,45,10,0.2222,0.1254,0.3627
+tinix_vn_trend,2022,excel,spreadsheets,Excel,45,28,0.6222,0.4763,0.7489
+tinix_vn_trend,2022,google_sheets,spreadsheets,Google Sheets / spreadsheets,45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,powerpoint,spreadsheets,PowerPoint,45,3,0.0667,0.0229,0.1786
+tinix_vn_trend,2022,data_warehouse,databases,Data warehouse (the concept),45,7,0.1556,0.0775,0.2878
+tinix_vn_trend,2022,bigquery,databases,BigQuery,45,2,0.0444,0.0123,0.1483
+tinix_vn_trend,2022,snowflake,databases,Snowflake,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,redshift,databases,Amazon Redshift,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,databricks,databases,Databricks,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,oracle,databases,Oracle,45,4,0.0889,0.0351,0.2073
+tinix_vn_trend,2022,sql_server,databases,Microsoft SQL Server,45,3,0.0667,0.0229,0.1786
+tinix_vn_trend,2022,mysql_postgres,databases,MySQL / PostgreSQL,45,2,0.0444,0.0123,0.1483
+tinix_vn_trend,2022,nosql,databases,"NoSQL (MongoDB, Cassandra, Elasticsearch)",45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,big_data_stack,databases,"Big data stack (Hadoop, Hive, Spark, Kafka)",45,4,0.0889,0.0351,0.2073
+tinix_vn_trend,2022,etl,data_engineering,ETL / ELT,45,2,0.0444,0.0123,0.1483
+tinix_vn_trend,2022,data_pipeline,data_engineering,Data pipelines,45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,airflow_orchestration,data_engineering,Airflow / orchestration,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,dbt,data_engineering,dbt,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,git,data_engineering,Git / version control,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,api_integration,data_engineering,APIs,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,web_scraping,data_engineering,Web scraping / crawling,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,data_modeling,data_engineering,Data modelling,45,3,0.0667,0.0229,0.1786
+tinix_vn_trend,2022,aws,cloud,AWS,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,azure,cloud,Microsoft Azure,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,gcp,cloud,Google Cloud,45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,cloud_generic,cloud,Cloud (the term),45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,statistics,statistics_ml,Statistics,45,17,0.3778,0.2511,0.5237
+tinix_vn_trend,2022,ab_testing,statistics_ml,A/B testing and experimentation,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,machine_learning,statistics_ml,Machine learning,45,6,0.1333,0.0626,0.2618
+tinix_vn_trend,2022,predictive_modeling,statistics_ml,Predictive modelling / forecasting,45,7,0.1556,0.0775,0.2878
+tinix_vn_trend,2022,deep_learning_nlp,statistics_ml,Deep learning / NLP,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,generative_ai,ai_genai,Generative AI / LLM tools,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,ai_general,ai_genai,AI (any mention),45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,automation,ai_genai,Automation,45,7,0.1556,0.0775,0.2878
+tinix_vn_trend,2022,rpa_low_code,ai_genai,"RPA / low-code (Power Automate, UiPath, n8n, Zapier)",45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,reporting,analytics_methods,Reporting,45,38,0.8444,0.7122,0.9225
+tinix_vn_trend,2022,kpi_metrics,analytics_methods,KPIs and metrics,45,12,0.2667,0.1596,0.4104
+tinix_vn_trend,2022,insights,analytics_methods,Insights and recommendations,45,21,0.4667,0.3294,0.6092
+tinix_vn_trend,2022,storytelling,analytics_methods,Data storytelling,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,segmentation_cohort_funnel,analytics_methods,"Segmentation, cohort and funnel analysis",45,4,0.0889,0.0351,0.2073
+tinix_vn_trend,2022,root_cause,analytics_methods,Root-cause and diagnostic analysis,45,6,0.1333,0.0626,0.2618
+tinix_vn_trend,2022,data_mining,analytics_methods,Data mining,45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,data_cleaning,analytics_methods,Data cleaning and preparation,45,5,0.1111,0.0484,0.235
+tinix_vn_trend,2022,financial_analysis,analytics_methods,Financial / commercial analysis,45,4,0.0889,0.0351,0.2073
+tinix_vn_trend,2022,market_customer_analysis,analytics_methods,Market and customer analysis,45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,sap_erp,business_tools,SAP / ERP systems,45,2,0.0444,0.0123,0.1483
+tinix_vn_trend,2022,crm_salesforce,business_tools,CRM / Salesforce / HubSpot,45,3,0.0667,0.0229,0.1786
+tinix_vn_trend,2022,google_analytics,business_tools,Google Analytics / GA4 / Tag Manager,45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,product_analytics_tools,business_tools,"Product analytics tools (Mixpanel, Amplitude, Firebase, AppsFlyer)",45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,ads_platforms,business_tools,"Ads platforms (Google Ads, Meta Ads, TikTok Ads)",45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,ecommerce_platforms,business_tools,"E-commerce platforms (Shopee, Lazada, Tiki, Shopify)",45,3,0.0667,0.0229,0.1786
+tinix_vn_trend,2022,jira_confluence,business_tools,Jira,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,data_quality,data_management,Data quality,45,3,0.0667,0.0229,0.1786
+tinix_vn_trend,2022,data_governance,data_management,Data governance and stewardship,45,3,0.0667,0.0229,0.1786
+tinix_vn_trend,2022,data_privacy_security,data_management,"Data privacy, security and compliance",45,4,0.0889,0.0351,0.2073
+tinix_vn_trend,2022,documentation,data_management,Documentation,45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,self_service_analytics,data_management,Self-service analytics / data literacy,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,communication,soft_skills,Communication,45,18,0.4,0.2702,0.5455
+tinix_vn_trend,2022,presentation,soft_skills,Presentation skills,45,8,0.1778,0.0929,0.3133
+tinix_vn_trend,2022,stakeholder_management,soft_skills,Stakeholder management,45,12,0.2667,0.1596,0.4104
+tinix_vn_trend,2022,problem_solving,soft_skills,Problem solving / critical thinking,45,18,0.4,0.2702,0.5455
+tinix_vn_trend,2022,attention_to_detail,soft_skills,Attention to detail,45,11,0.2444,0.1424,0.3867
+tinix_vn_trend,2022,teamwork,soft_skills,Teamwork / collaboration,45,20,0.4444,0.3094,0.5882
+tinix_vn_trend,2022,business_acumen,soft_skills,Business acumen / commercial sense,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,ownership_proactive,soft_skills,Ownership / proactivity / self-starter,45,18,0.4,0.2702,0.5455
+tinix_vn_trend,2022,time_management,soft_skills,Time management / prioritisation,45,8,0.1778,0.0929,0.3133
+tinix_vn_trend,2022,curiosity_learning,soft_skills,Curiosity / continuous learning,45,9,0.2,0.109,0.3382
+tinix_vn_trend,2022,leadership_mentoring,soft_skills,Leadership / mentoring,45,4,0.0889,0.0351,0.2073
+tinix_vn_trend,2022,english,language,English,45,15,0.3333,0.2136,0.4793
+tinix_vn_trend,2022,other_language,language,Japanese / Chinese / Korean,45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,agile_scrum,ways_of_working,Agile / Scrum,45,0,0.0,0.0,0.0787
+tinix_vn_trend,2022,requirements_gathering,ways_of_working,Requirements gathering / business analysis,45,3,0.0667,0.0229,0.1786
+tinix_vn_trend,2022,process_improvement,ways_of_working,Process improvement / Lean Six Sigma,45,2,0.0444,0.0123,0.1483
+tinix_vn_trend,2022,project_management,ways_of_working,Project management,45,1,0.0222,0.0039,0.1157
+tinix_vn_trend,2022,any_ai,ai_genai,Any AI mention (generative_ai or ai_general),45,0,0.0,0.0,0.0787
+tinix_vn_trend,2023,sql,programming,SQL,49,18,0.3673,0.2467,0.5073
+tinix_vn_trend,2023,python,programming,Python,49,10,0.2041,0.1148,0.3364
+tinix_vn_trend,2023,r_lang,programming,R,49,7,0.1429,0.071,0.2667
+tinix_vn_trend,2023,vba_macros,programming,VBA / macros,49,3,0.0612,0.021,0.1652
+tinix_vn_trend,2023,dax,programming,DAX,49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,power_query,programming,Power Query,49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,scala_java,programming,Scala / Java,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,sas,programming,SAS,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,spss_stata,programming,SPSS / Stata,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,power_bi,bi_visualization,Power BI,49,17,0.3469,0.2292,0.4869
+tinix_vn_trend,2023,tableau,bi_visualization,Tableau,49,11,0.2245,0.1302,0.3588
+tinix_vn_trend,2023,looker,bi_visualization,Looker / LookML,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,looker_studio,bi_visualization,Looker Studio / Data Studio,49,4,0.0816,0.0322,0.1919
+tinix_vn_trend,2023,qlik,bi_visualization,Qlik,49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,other_bi_tools,bi_visualization,"Other BI tools (Metabase, Superset, Redash, MicroStrategy, Cognos, SAP BO)",49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,bi_generic,bi_visualization,Business intelligence (the term),49,22,0.449,0.3185,0.5868
+tinix_vn_trend,2023,data_visualization,bi_visualization,Data visualisation,49,9,0.1837,0.0998,0.3136
+tinix_vn_trend,2023,dashboard,bi_visualization,Dashboards,49,9,0.1837,0.0998,0.3136
+tinix_vn_trend,2023,excel,spreadsheets,Excel,49,29,0.5918,0.4525,0.7178
+tinix_vn_trend,2023,google_sheets,spreadsheets,Google Sheets / spreadsheets,49,6,0.1224,0.0573,0.2424
+tinix_vn_trend,2023,powerpoint,spreadsheets,PowerPoint,49,11,0.2245,0.1302,0.3588
+tinix_vn_trend,2023,data_warehouse,databases,Data warehouse (the concept),49,7,0.1429,0.071,0.2667
+tinix_vn_trend,2023,bigquery,databases,BigQuery,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,snowflake,databases,Snowflake,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,redshift,databases,Amazon Redshift,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,databricks,databases,Databricks,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,oracle,databases,Oracle,49,6,0.1224,0.0573,0.2424
+tinix_vn_trend,2023,sql_server,databases,Microsoft SQL Server,49,5,0.102,0.0444,0.2176
+tinix_vn_trend,2023,mysql_postgres,databases,MySQL / PostgreSQL,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,nosql,databases,"NoSQL (MongoDB, Cassandra, Elasticsearch)",49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,big_data_stack,databases,"Big data stack (Hadoop, Hive, Spark, Kafka)",49,4,0.0816,0.0322,0.1919
+tinix_vn_trend,2023,etl,data_engineering,ETL / ELT,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,data_pipeline,data_engineering,Data pipelines,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,airflow_orchestration,data_engineering,Airflow / orchestration,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,dbt,data_engineering,dbt,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,git,data_engineering,Git / version control,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,api_integration,data_engineering,APIs,49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,web_scraping,data_engineering,Web scraping / crawling,49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,data_modeling,data_engineering,Data modelling,49,5,0.102,0.0444,0.2176
+tinix_vn_trend,2023,aws,cloud,AWS,49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,azure,cloud,Microsoft Azure,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,gcp,cloud,Google Cloud,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,cloud_generic,cloud,Cloud (the term),49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,statistics,statistics_ml,Statistics,49,10,0.2041,0.1148,0.3364
+tinix_vn_trend,2023,ab_testing,statistics_ml,A/B testing and experimentation,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,machine_learning,statistics_ml,Machine learning,49,3,0.0612,0.021,0.1652
+tinix_vn_trend,2023,predictive_modeling,statistics_ml,Predictive modelling / forecasting,49,7,0.1429,0.071,0.2667
+tinix_vn_trend,2023,deep_learning_nlp,statistics_ml,Deep learning / NLP,49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,generative_ai,ai_genai,Generative AI / LLM tools,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,ai_general,ai_genai,AI (any mention),49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,automation,ai_genai,Automation,49,4,0.0816,0.0322,0.1919
+tinix_vn_trend,2023,rpa_low_code,ai_genai,"RPA / low-code (Power Automate, UiPath, n8n, Zapier)",49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,reporting,analytics_methods,Reporting,49,40,0.8163,0.6864,0.9002
+tinix_vn_trend,2023,kpi_metrics,analytics_methods,KPIs and metrics,49,11,0.2245,0.1302,0.3588
+tinix_vn_trend,2023,insights,analytics_methods,Insights and recommendations,49,21,0.4286,0.3002,0.5673
+tinix_vn_trend,2023,storytelling,analytics_methods,Data storytelling,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,segmentation_cohort_funnel,analytics_methods,"Segmentation, cohort and funnel analysis",49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,root_cause,analytics_methods,Root-cause and diagnostic analysis,49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,data_mining,analytics_methods,Data mining,49,4,0.0816,0.0322,0.1919
+tinix_vn_trend,2023,data_cleaning,analytics_methods,Data cleaning and preparation,49,8,0.1633,0.0851,0.2904
+tinix_vn_trend,2023,financial_analysis,analytics_methods,Financial / commercial analysis,49,3,0.0612,0.021,0.1652
+tinix_vn_trend,2023,market_customer_analysis,analytics_methods,Market and customer analysis,49,5,0.102,0.0444,0.2176
+tinix_vn_trend,2023,sap_erp,business_tools,SAP / ERP systems,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,crm_salesforce,business_tools,CRM / Salesforce / HubSpot,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,google_analytics,business_tools,Google Analytics / GA4 / Tag Manager,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,product_analytics_tools,business_tools,"Product analytics tools (Mixpanel, Amplitude, Firebase, AppsFlyer)",49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,ads_platforms,business_tools,"Ads platforms (Google Ads, Meta Ads, TikTok Ads)",49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,ecommerce_platforms,business_tools,"E-commerce platforms (Shopee, Lazada, Tiki, Shopify)",49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,jira_confluence,business_tools,Jira,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,data_quality,data_management,Data quality,49,5,0.102,0.0444,0.2176
+tinix_vn_trend,2023,data_governance,data_management,Data governance and stewardship,49,5,0.102,0.0444,0.2176
+tinix_vn_trend,2023,data_privacy_security,data_management,"Data privacy, security and compliance",49,6,0.1224,0.0573,0.2424
+tinix_vn_trend,2023,documentation,data_management,Documentation,49,4,0.0816,0.0322,0.1919
+tinix_vn_trend,2023,self_service_analytics,data_management,Self-service analytics / data literacy,49,0,0.0,0.0,0.0727
+tinix_vn_trend,2023,communication,soft_skills,Communication,49,25,0.5102,0.3747,0.6442
+tinix_vn_trend,2023,presentation,soft_skills,Presentation skills,49,15,0.3061,0.1952,0.4453
+tinix_vn_trend,2023,stakeholder_management,soft_skills,Stakeholder management,49,11,0.2245,0.1302,0.3588
+tinix_vn_trend,2023,problem_solving,soft_skills,Problem solving / critical thinking,49,16,0.3265,0.2121,0.4662
+tinix_vn_trend,2023,attention_to_detail,soft_skills,Attention to detail,49,7,0.1429,0.071,0.2667
+tinix_vn_trend,2023,teamwork,soft_skills,Teamwork / collaboration,49,19,0.3878,0.2643,0.5275
+tinix_vn_trend,2023,business_acumen,soft_skills,Business acumen / commercial sense,49,1,0.0204,0.0036,0.1069
+tinix_vn_trend,2023,ownership_proactive,soft_skills,Ownership / proactivity / self-starter,49,18,0.3673,0.2467,0.5073
+tinix_vn_trend,2023,time_management,soft_skills,Time management / prioritisation,49,13,0.2653,0.1621,0.4026
+tinix_vn_trend,2023,curiosity_learning,soft_skills,Curiosity / continuous learning,49,8,0.1633,0.0851,0.2904
+tinix_vn_trend,2023,leadership_mentoring,soft_skills,Leadership / mentoring,49,10,0.2041,0.1148,0.3364
+tinix_vn_trend,2023,english,language,English,49,22,0.449,0.3185,0.5868
+tinix_vn_trend,2023,other_language,language,Japanese / Chinese / Korean,49,4,0.0816,0.0322,0.1919
+tinix_vn_trend,2023,agile_scrum,ways_of_working,Agile / Scrum,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,requirements_gathering,ways_of_working,Requirements gathering / business analysis,49,3,0.0612,0.021,0.1652
+tinix_vn_trend,2023,process_improvement,ways_of_working,Process improvement / Lean Six Sigma,49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2023,project_management,ways_of_working,Project management,49,5,0.102,0.0444,0.2176
+tinix_vn_trend,2023,any_ai,ai_genai,Any AI mention (generative_ai or ai_general),49,2,0.0408,0.0113,0.1371
+tinix_vn_trend,2024,sql,programming,SQL,76,38,0.5,0.3903,0.6097
+tinix_vn_trend,2024,python,programming,Python,76,22,0.2895,0.1996,0.3996
+tinix_vn_trend,2024,r_lang,programming,R,76,6,0.0789,0.0367,0.1617
+tinix_vn_trend,2024,vba_macros,programming,VBA / macros,76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,dax,programming,DAX,76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,power_query,programming,Power Query,76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,scala_java,programming,Scala / Java,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,sas,programming,SAS,76,3,0.0395,0.0135,0.1097
+tinix_vn_trend,2024,spss_stata,programming,SPSS / Stata,76,6,0.0789,0.0367,0.1617
+tinix_vn_trend,2024,power_bi,bi_visualization,Power BI,76,30,0.3947,0.2925,0.5071
+tinix_vn_trend,2024,tableau,bi_visualization,Tableau,76,10,0.1316,0.0731,0.2255
+tinix_vn_trend,2024,looker,bi_visualization,Looker / LookML,76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,looker_studio,bi_visualization,Looker Studio / Data Studio,76,3,0.0395,0.0135,0.1097
+tinix_vn_trend,2024,qlik,bi_visualization,Qlik,76,2,0.0263,0.0072,0.091
+tinix_vn_trend,2024,other_bi_tools,bi_visualization,"Other BI tools (Metabase, Superset, Redash, MicroStrategy, Cognos, SAP BO)",76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,bi_generic,bi_visualization,Business intelligence (the term),76,29,0.3816,0.2806,0.494
+tinix_vn_trend,2024,data_visualization,bi_visualization,Data visualisation,76,23,0.3026,0.2109,0.4133
+tinix_vn_trend,2024,dashboard,bi_visualization,Dashboards,76,13,0.1711,0.1028,0.271
+tinix_vn_trend,2024,excel,spreadsheets,Excel,76,29,0.3816,0.2806,0.494
+tinix_vn_trend,2024,google_sheets,spreadsheets,Google Sheets / spreadsheets,76,5,0.0658,0.0284,0.1449
+tinix_vn_trend,2024,powerpoint,spreadsheets,PowerPoint,76,7,0.0921,0.0453,0.1781
+tinix_vn_trend,2024,data_warehouse,databases,Data warehouse (the concept),76,5,0.0658,0.0284,0.1449
+tinix_vn_trend,2024,bigquery,databases,BigQuery,76,2,0.0263,0.0072,0.091
+tinix_vn_trend,2024,snowflake,databases,Snowflake,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,redshift,databases,Amazon Redshift,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,databricks,databases,Databricks,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,oracle,databases,Oracle,76,5,0.0658,0.0284,0.1449
+tinix_vn_trend,2024,sql_server,databases,Microsoft SQL Server,76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,mysql_postgres,databases,MySQL / PostgreSQL,76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,nosql,databases,"NoSQL (MongoDB, Cassandra, Elasticsearch)",76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,big_data_stack,databases,"Big data stack (Hadoop, Hive, Spark, Kafka)",76,8,0.1053,0.0543,0.1942
+tinix_vn_trend,2024,etl,data_engineering,ETL / ELT,76,5,0.0658,0.0284,0.1449
+tinix_vn_trend,2024,data_pipeline,data_engineering,Data pipelines,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,airflow_orchestration,data_engineering,Airflow / orchestration,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,dbt,data_engineering,dbt,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,git,data_engineering,Git / version control,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,api_integration,data_engineering,APIs,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,web_scraping,data_engineering,Web scraping / crawling,76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,data_modeling,data_engineering,Data modelling,76,8,0.1053,0.0543,0.1942
+tinix_vn_trend,2024,aws,cloud,AWS,76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,azure,cloud,Microsoft Azure,76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,gcp,cloud,Google Cloud,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,cloud_generic,cloud,Cloud (the term),76,2,0.0263,0.0072,0.091
+tinix_vn_trend,2024,statistics,statistics_ml,Statistics,76,28,0.3684,0.2688,0.4807
+tinix_vn_trend,2024,ab_testing,statistics_ml,A/B testing and experimentation,76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,machine_learning,statistics_ml,Machine learning,76,13,0.1711,0.1028,0.271
+tinix_vn_trend,2024,predictive_modeling,statistics_ml,Predictive modelling / forecasting,76,15,0.1974,0.1234,0.3004
+tinix_vn_trend,2024,deep_learning_nlp,statistics_ml,Deep learning / NLP,76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,generative_ai,ai_genai,Generative AI / LLM tools,76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,ai_general,ai_genai,AI (any mention),76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,automation,ai_genai,Automation,76,7,0.0921,0.0453,0.1781
+tinix_vn_trend,2024,rpa_low_code,ai_genai,"RPA / low-code (Power Automate, UiPath, n8n, Zapier)",76,2,0.0263,0.0072,0.091
+tinix_vn_trend,2024,reporting,analytics_methods,Reporting,76,62,0.8158,0.7142,0.887
+tinix_vn_trend,2024,kpi_metrics,analytics_methods,KPIs and metrics,76,14,0.1842,0.113,0.2858
+tinix_vn_trend,2024,insights,analytics_methods,Insights and recommendations,76,37,0.4868,0.3778,0.5971
+tinix_vn_trend,2024,storytelling,analytics_methods,Data storytelling,76,2,0.0263,0.0072,0.091
+tinix_vn_trend,2024,segmentation_cohort_funnel,analytics_methods,"Segmentation, cohort and funnel analysis",76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,root_cause,analytics_methods,Root-cause and diagnostic analysis,76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,data_mining,analytics_methods,Data mining,76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,data_cleaning,analytics_methods,Data cleaning and preparation,76,18,0.2368,0.1554,0.3436
+tinix_vn_trend,2024,financial_analysis,analytics_methods,Financial / commercial analysis,76,7,0.0921,0.0453,0.1781
+tinix_vn_trend,2024,market_customer_analysis,analytics_methods,Market and customer analysis,76,7,0.0921,0.0453,0.1781
+tinix_vn_trend,2024,sap_erp,business_tools,SAP / ERP systems,76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,crm_salesforce,business_tools,CRM / Salesforce / HubSpot,76,3,0.0395,0.0135,0.1097
+tinix_vn_trend,2024,google_analytics,business_tools,Google Analytics / GA4 / Tag Manager,76,6,0.0789,0.0367,0.1617
+tinix_vn_trend,2024,product_analytics_tools,business_tools,"Product analytics tools (Mixpanel, Amplitude, Firebase, AppsFlyer)",76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,ads_platforms,business_tools,"Ads platforms (Google Ads, Meta Ads, TikTok Ads)",76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,ecommerce_platforms,business_tools,"E-commerce platforms (Shopee, Lazada, Tiki, Shopify)",76,3,0.0395,0.0135,0.1097
+tinix_vn_trend,2024,jira_confluence,business_tools,Jira,76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,data_quality,data_management,Data quality,76,5,0.0658,0.0284,0.1449
+tinix_vn_trend,2024,data_governance,data_management,Data governance and stewardship,76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,data_privacy_security,data_management,"Data privacy, security and compliance",76,9,0.1184,0.0636,0.21
+tinix_vn_trend,2024,documentation,data_management,Documentation,76,3,0.0395,0.0135,0.1097
+tinix_vn_trend,2024,self_service_analytics,data_management,Self-service analytics / data literacy,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,communication,soft_skills,Communication,76,34,0.4474,0.3408,0.559
+tinix_vn_trend,2024,presentation,soft_skills,Presentation skills,76,12,0.1579,0.0927,0.256
+tinix_vn_trend,2024,stakeholder_management,soft_skills,Stakeholder management,76,23,0.3026,0.2109,0.4133
+tinix_vn_trend,2024,problem_solving,soft_skills,Problem solving / critical thinking,76,27,0.3553,0.257,0.4674
+tinix_vn_trend,2024,attention_to_detail,soft_skills,Attention to detail,76,18,0.2368,0.1554,0.3436
+tinix_vn_trend,2024,teamwork,soft_skills,Teamwork / collaboration,76,29,0.3816,0.2806,0.494
+tinix_vn_trend,2024,business_acumen,soft_skills,Business acumen / commercial sense,76,0,0.0,0.0,0.0481
+tinix_vn_trend,2024,ownership_proactive,soft_skills,Ownership / proactivity / self-starter,76,26,0.3421,0.2454,0.454
+tinix_vn_trend,2024,time_management,soft_skills,Time management / prioritisation,76,12,0.1579,0.0927,0.256
+tinix_vn_trend,2024,curiosity_learning,soft_skills,Curiosity / continuous learning,76,6,0.0789,0.0367,0.1617
+tinix_vn_trend,2024,leadership_mentoring,soft_skills,Leadership / mentoring,76,10,0.1316,0.0731,0.2255
+tinix_vn_trend,2024,english,language,English,76,32,0.4211,0.3165,0.5332
+tinix_vn_trend,2024,other_language,language,Japanese / Chinese / Korean,76,5,0.0658,0.0284,0.1449
+tinix_vn_trend,2024,agile_scrum,ways_of_working,Agile / Scrum,76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2024,requirements_gathering,ways_of_working,Requirements gathering / business analysis,76,3,0.0395,0.0135,0.1097
+tinix_vn_trend,2024,process_improvement,ways_of_working,Process improvement / Lean Six Sigma,76,4,0.0526,0.0207,0.1277
+tinix_vn_trend,2024,project_management,ways_of_working,Project management,76,3,0.0395,0.0135,0.1097
+tinix_vn_trend,2024,any_ai,ai_genai,Any AI mention (generative_ai or ai_general),76,1,0.0132,0.0023,0.0708
+tinix_vn_trend,2025,sql,programming,SQL,125,82,0.656,0.5692,0.7335
+tinix_vn_trend,2025,python,programming,Python,125,54,0.432,0.3485,0.5196
+tinix_vn_trend,2025,r_lang,programming,R,125,17,0.136,0.0867,0.207
+tinix_vn_trend,2025,vba_macros,programming,VBA / macros,125,7,0.056,0.0274,0.1111
+tinix_vn_trend,2025,dax,programming,DAX,125,0,0.0,0.0,0.0298
+tinix_vn_trend,2025,power_query,programming,Power Query,125,5,0.04,0.0172,0.0902
+tinix_vn_trend,2025,scala_java,programming,Scala / Java,125,0,0.0,0.0,0.0298
+tinix_vn_trend,2025,sas,programming,SAS,125,6,0.048,0.0222,0.1008
+tinix_vn_trend,2025,spss_stata,programming,SPSS / Stata,125,4,0.032,0.0125,0.0794
+tinix_vn_trend,2025,power_bi,bi_visualization,Power BI,125,68,0.544,0.4567,0.6287
+tinix_vn_trend,2025,tableau,bi_visualization,Tableau,125,44,0.352,0.2738,0.439
+tinix_vn_trend,2025,looker,bi_visualization,Looker / LookML,125,10,0.08,0.044,0.141
+tinix_vn_trend,2025,looker_studio,bi_visualization,Looker Studio / Data Studio,125,12,0.096,0.0558,0.1603
+tinix_vn_trend,2025,qlik,bi_visualization,Qlik,125,4,0.032,0.0125,0.0794
+tinix_vn_trend,2025,other_bi_tools,bi_visualization,"Other BI tools (Metabase, Superset, Redash, MicroStrategy, Cognos, SAP BO)",125,7,0.056,0.0274,0.1111
+tinix_vn_trend,2025,bi_generic,bi_visualization,Business intelligence (the term),125,70,0.56,0.4725,0.6439
+tinix_vn_trend,2025,data_visualization,bi_visualization,Data visualisation,125,67,0.536,0.4488,0.621
+tinix_vn_trend,2025,dashboard,bi_visualization,Dashboards,125,47,0.376,0.296,0.4634
+tinix_vn_trend,2025,excel,spreadsheets,Excel,125,75,0.6,0.5124,0.6817
+tinix_vn_trend,2025,google_sheets,spreadsheets,Google Sheets / spreadsheets,125,8,0.064,0.0328,0.1212
+tinix_vn_trend,2025,powerpoint,spreadsheets,PowerPoint,125,13,0.104,0.0618,0.1698
+tinix_vn_trend,2025,data_warehouse,databases,Data warehouse (the concept),125,21,0.168,0.1126,0.2432
+tinix_vn_trend,2025,bigquery,databases,BigQuery,125,11,0.088,0.0498,0.1507
+tinix_vn_trend,2025,snowflake,databases,Snowflake,125,5,0.04,0.0172,0.0902
+tinix_vn_trend,2025,redshift,databases,Amazon Redshift,125,3,0.024,0.0082,0.0682
+tinix_vn_trend,2025,databricks,databases,Databricks,125,0,0.0,0.0,0.0298
+tinix_vn_trend,2025,oracle,databases,Oracle,125,9,0.072,0.0383,0.1312
+tinix_vn_trend,2025,sql_server,databases,Microsoft SQL Server,125,10,0.08,0.044,0.141
+tinix_vn_trend,2025,mysql_postgres,databases,MySQL / PostgreSQL,125,13,0.104,0.0618,0.1698
+tinix_vn_trend,2025,nosql,databases,"NoSQL (MongoDB, Cassandra, Elasticsearch)",125,5,0.04,0.0172,0.0902
+tinix_vn_trend,2025,big_data_stack,databases,"Big data stack (Hadoop, Hive, Spark, Kafka)",125,19,0.152,0.0995,0.2252
+tinix_vn_trend,2025,etl,data_engineering,ETL / ELT,125,10,0.08,0.044,0.141
+tinix_vn_trend,2025,data_pipeline,data_engineering,Data pipelines,125,2,0.016,0.0044,0.0565
+tinix_vn_trend,2025,airflow_orchestration,data_engineering,Airflow / orchestration,125,4,0.032,0.0125,0.0794
+tinix_vn_trend,2025,dbt,data_engineering,dbt,125,5,0.04,0.0172,0.0902
+tinix_vn_trend,2025,git,data_engineering,Git / version control,125,1,0.008,0.0014,0.0439
+tinix_vn_trend,2025,api_integration,data_engineering,APIs,125,1,0.008,0.0014,0.0439
+tinix_vn_trend,2025,web_scraping,data_engineering,Web scraping / crawling,125,0,0.0,0.0,0.0298
+tinix_vn_trend,2025,data_modeling,data_engineering,Data modelling,125,20,0.16,0.106,0.2342
+tinix_vn_trend,2025,aws,cloud,AWS,125,6,0.048,0.0222,0.1008
+tinix_vn_trend,2025,azure,cloud,Microsoft Azure,125,2,0.016,0.0044,0.0565
+tinix_vn_trend,2025,gcp,cloud,Google Cloud,125,2,0.016,0.0044,0.0565
+tinix_vn_trend,2025,cloud_generic,cloud,Cloud (the term),125,7,0.056,0.0274,0.1111
+tinix_vn_trend,2025,statistics,statistics_ml,Statistics,125,64,0.512,0.4253,0.598
+tinix_vn_trend,2025,ab_testing,statistics_ml,A/B testing and experimentation,125,8,0.064,0.0328,0.1212
+tinix_vn_trend,2025,machine_learning,statistics_ml,Machine learning,125,21,0.168,0.1126,0.2432
+tinix_vn_trend,2025,predictive_modeling,statistics_ml,Predictive modelling / forecasting,125,31,0.248,0.1806,0.3305
+tinix_vn_trend,2025,deep_learning_nlp,statistics_ml,Deep learning / NLP,125,2,0.016,0.0044,0.0565
+tinix_vn_trend,2025,generative_ai,ai_genai,Generative AI / LLM tools,125,2,0.016,0.0044,0.0565
+tinix_vn_trend,2025,ai_general,ai_genai,AI (any mention),125,15,0.12,0.0741,0.1886
+tinix_vn_trend,2025,automation,ai_genai,Automation,125,28,0.224,0.1598,0.3047
+tinix_vn_trend,2025,rpa_low_code,ai_genai,"RPA / low-code (Power Automate, UiPath, n8n, Zapier)",125,1,0.008,0.0014,0.0439
+tinix_vn_trend,2025,reporting,analytics_methods,Reporting,125,104,0.832,0.7568,0.8874
+tinix_vn_trend,2025,kpi_metrics,analytics_methods,KPIs and metrics,125,34,0.272,0.2017,0.3559
+tinix_vn_trend,2025,insights,analytics_methods,Insights and recommendations,125,55,0.44,0.3561,0.5275
+tinix_vn_trend,2025,storytelling,analytics_methods,Data storytelling,125,2,0.016,0.0044,0.0565
+tinix_vn_trend,2025,segmentation_cohort_funnel,analytics_methods,"Segmentation, cohort and funnel analysis",125,10,0.08,0.044,0.141
+tinix_vn_trend,2025,root_cause,analytics_methods,Root-cause and diagnostic analysis,125,8,0.064,0.0328,0.1212
+tinix_vn_trend,2025,data_mining,analytics_methods,Data mining,125,16,0.128,0.0803,0.1978
+tinix_vn_trend,2025,data_cleaning,analytics_methods,Data cleaning and preparation,125,37,0.296,0.223,0.3811
+tinix_vn_trend,2025,financial_analysis,analytics_methods,Financial / commercial analysis,125,12,0.096,0.0558,0.1603
+tinix_vn_trend,2025,market_customer_analysis,analytics_methods,Market and customer analysis,125,14,0.112,0.0679,0.1792
+tinix_vn_trend,2025,sap_erp,business_tools,SAP / ERP systems,125,6,0.048,0.0222,0.1008
+tinix_vn_trend,2025,crm_salesforce,business_tools,CRM / Salesforce / HubSpot,125,6,0.048,0.0222,0.1008
+tinix_vn_trend,2025,google_analytics,business_tools,Google Analytics / GA4 / Tag Manager,125,10,0.08,0.044,0.141
+tinix_vn_trend,2025,product_analytics_tools,business_tools,"Product analytics tools (Mixpanel, Amplitude, Firebase, AppsFlyer)",125,2,0.016,0.0044,0.0565
+tinix_vn_trend,2025,ads_platforms,business_tools,"Ads platforms (Google Ads, Meta Ads, TikTok Ads)",125,4,0.032,0.0125,0.0794
+tinix_vn_trend,2025,ecommerce_platforms,business_tools,"E-commerce platforms (Shopee, Lazada, Tiki, Shopify)",125,17,0.136,0.0867,0.207
+tinix_vn_trend,2025,jira_confluence,business_tools,Jira,125,2,0.016,0.0044,0.0565
+tinix_vn_trend,2025,data_quality,data_management,Data quality,125,13,0.104,0.0618,0.1698
+tinix_vn_trend,2025,data_governance,data_management,Data governance and stewardship,125,8,0.064,0.0328,0.1212
+tinix_vn_trend,2025,data_privacy_security,data_management,"Data privacy, security and compliance",125,13,0.104,0.0618,0.1698
+tinix_vn_trend,2025,documentation,data_management,Documentation,125,3,0.024,0.0082,0.0682
+tinix_vn_trend,2025,self_service_analytics,data_management,Self-service analytics / data literacy,125,2,0.016,0.0044,0.0565
+tinix_vn_trend,2025,communication,soft_skills,Communication,125,72,0.576,0.4884,0.6591
+tinix_vn_trend,2025,presentation,soft_skills,Presentation skills,125,36,0.288,0.2159,0.3728
+tinix_vn_trend,2025,stakeholder_management,soft_skills,Stakeholder management,125,35,0.28,0.2088,0.3644
+tinix_vn_trend,2025,problem_solving,soft_skills,Problem solving / critical thinking,125,64,0.512,0.4253,0.598
+tinix_vn_trend,2025,attention_to_detail,soft_skills,Attention to detail,125,29,0.232,0.1667,0.3133
+tinix_vn_trend,2025,teamwork,soft_skills,Teamwork / collaboration,125,57,0.456,0.3713,0.5433
+tinix_vn_trend,2025,business_acumen,soft_skills,Business acumen / commercial sense,125,4,0.032,0.0125,0.0794
+tinix_vn_trend,2025,ownership_proactive,soft_skills,Ownership / proactivity / self-starter,125,45,0.36,0.2812,0.4472
+tinix_vn_trend,2025,time_management,soft_skills,Time management / prioritisation,125,24,0.192,0.1326,0.2698
+tinix_vn_trend,2025,curiosity_learning,soft_skills,Curiosity / continuous learning,125,21,0.168,0.1126,0.2432
+tinix_vn_trend,2025,leadership_mentoring,soft_skills,Leadership / mentoring,125,23,0.184,0.1259,0.261
+tinix_vn_trend,2025,english,language,English,125,33,0.264,0.1946,0.3475
+tinix_vn_trend,2025,other_language,language,Japanese / Chinese / Korean,125,3,0.024,0.0082,0.0682
+tinix_vn_trend,2025,agile_scrum,ways_of_working,Agile / Scrum,125,2,0.016,0.0044,0.0565
+tinix_vn_trend,2025,requirements_gathering,ways_of_working,Requirements gathering / business analysis,125,12,0.096,0.0558,0.1603
+tinix_vn_trend,2025,process_improvement,ways_of_working,Process improvement / Lean Six Sigma,125,17,0.136,0.0867,0.207
+tinix_vn_trend,2025,project_management,ways_of_working,Project management,125,7,0.056,0.0274,0.1111
+tinix_vn_trend,2025,any_ai,ai_genai,Any AI mention (generative_ai or ai_general),125,15,0.12,0.0741,0.1886
+tinix_vn_trend,2026,sql,programming,SQL,242,152,0.6281,0.5656,0.6865
+tinix_vn_trend,2026,python,programming,Python,242,98,0.405,0.3451,0.4678
+tinix_vn_trend,2026,r_lang,programming,R,242,30,0.124,0.0882,0.1715
+tinix_vn_trend,2026,vba_macros,programming,VBA / macros,242,11,0.0455,0.0256,0.0795
+tinix_vn_trend,2026,dax,programming,DAX,242,7,0.0289,0.0141,0.0585
+tinix_vn_trend,2026,power_query,programming,Power Query,242,15,0.062,0.0379,0.0997
+tinix_vn_trend,2026,scala_java,programming,Scala / Java,242,3,0.0124,0.0042,0.0358
+tinix_vn_trend,2026,sas,programming,SAS,242,4,0.0165,0.0064,0.0417
+tinix_vn_trend,2026,spss_stata,programming,SPSS / Stata,242,2,0.0083,0.0023,0.0296
+tinix_vn_trend,2026,power_bi,bi_visualization,Power BI,242,139,0.5744,0.5114,0.635
+tinix_vn_trend,2026,tableau,bi_visualization,Tableau,242,95,0.3926,0.3332,0.4553
+tinix_vn_trend,2026,looker,bi_visualization,Looker / LookML,242,25,0.1033,0.071,0.1481
+tinix_vn_trend,2026,looker_studio,bi_visualization,Looker Studio / Data Studio,242,35,0.1446,0.1059,0.1945
+tinix_vn_trend,2026,qlik,bi_visualization,Qlik,242,7,0.0289,0.0141,0.0585
+tinix_vn_trend,2026,other_bi_tools,bi_visualization,"Other BI tools (Metabase, Superset, Redash, MicroStrategy, Cognos, SAP BO)",242,19,0.0785,0.0508,0.1194
+tinix_vn_trend,2026,bi_generic,bi_visualization,Business intelligence (the term),242,156,0.6446,0.5825,0.7022
+tinix_vn_trend,2026,data_visualization,bi_visualization,Data visualisation,242,98,0.405,0.3451,0.4678
+tinix_vn_trend,2026,dashboard,bi_visualization,Dashboards,242,135,0.5579,0.4949,0.619
+tinix_vn_trend,2026,excel,spreadsheets,Excel,242,116,0.4793,0.4172,0.5421
+tinix_vn_trend,2026,google_sheets,spreadsheets,Google Sheets / spreadsheets,242,32,0.1322,0.0952,0.1807
+tinix_vn_trend,2026,powerpoint,spreadsheets,PowerPoint,242,14,0.0579,0.0348,0.0948
+tinix_vn_trend,2026,data_warehouse,databases,Data warehouse (the concept),242,57,0.2355,0.1865,0.2929
+tinix_vn_trend,2026,bigquery,databases,BigQuery,242,17,0.0702,0.0443,0.1096
+tinix_vn_trend,2026,snowflake,databases,Snowflake,242,6,0.0248,0.0114,0.053
+tinix_vn_trend,2026,redshift,databases,Amazon Redshift,242,8,0.0331,0.0168,0.0639
+tinix_vn_trend,2026,databricks,databases,Databricks,242,6,0.0248,0.0114,0.053
+tinix_vn_trend,2026,oracle,databases,Oracle,242,26,0.1074,0.0744,0.1528
+tinix_vn_trend,2026,sql_server,databases,Microsoft SQL Server,242,20,0.0826,0.0541,0.1242
+tinix_vn_trend,2026,mysql_postgres,databases,MySQL / PostgreSQL,242,12,0.0496,0.0286,0.0847
+tinix_vn_trend,2026,nosql,databases,"NoSQL (MongoDB, Cassandra, Elasticsearch)",242,5,0.0207,0.0089,0.0474
+tinix_vn_trend,2026,big_data_stack,databases,"Big data stack (Hadoop, Hive, Spark, Kafka)",242,47,0.1942,0.1493,0.2487
+tinix_vn_trend,2026,etl,data_engineering,ETL / ELT,242,34,0.1405,0.1023,0.1899
+tinix_vn_trend,2026,data_pipeline,data_engineering,Data pipelines,242,19,0.0785,0.0508,0.1194
+tinix_vn_trend,2026,airflow_orchestration,data_engineering,Airflow / orchestration,242,5,0.0207,0.0089,0.0474
+tinix_vn_trend,2026,dbt,data_engineering,dbt,242,4,0.0165,0.0064,0.0417
+tinix_vn_trend,2026,git,data_engineering,Git / version control,242,6,0.0248,0.0114,0.053
+tinix_vn_trend,2026,api_integration,data_engineering,APIs,242,19,0.0785,0.0508,0.1194
+tinix_vn_trend,2026,web_scraping,data_engineering,Web scraping / crawling,242,1,0.0041,0.0007,0.023
+tinix_vn_trend,2026,data_modeling,data_engineering,Data modelling,242,47,0.1942,0.1493,0.2487
+tinix_vn_trend,2026,aws,cloud,AWS,242,14,0.0579,0.0348,0.0948
+tinix_vn_trend,2026,azure,cloud,Microsoft Azure,242,9,0.0372,0.0197,0.0692
+tinix_vn_trend,2026,gcp,cloud,Google Cloud,242,4,0.0165,0.0064,0.0417
+tinix_vn_trend,2026,cloud_generic,cloud,Cloud (the term),242,14,0.0579,0.0348,0.0948
+tinix_vn_trend,2026,statistics,statistics_ml,Statistics,242,108,0.4463,0.385,0.5093
+tinix_vn_trend,2026,ab_testing,statistics_ml,A/B testing and experimentation,242,28,0.1157,0.0813,0.1621
+tinix_vn_trend,2026,machine_learning,statistics_ml,Machine learning,242,49,0.2025,0.1567,0.2576
+tinix_vn_trend,2026,predictive_modeling,statistics_ml,Predictive modelling / forecasting,242,68,0.281,0.2281,0.3407
+tinix_vn_trend,2026,deep_learning_nlp,statistics_ml,Deep learning / NLP,242,9,0.0372,0.0197,0.0692
+tinix_vn_trend,2026,generative_ai,ai_genai,Generative AI / LLM tools,242,8,0.0331,0.0168,0.0639
+tinix_vn_trend,2026,ai_general,ai_genai,AI (any mention),242,39,0.1612,0.1202,0.2127
+tinix_vn_trend,2026,automation,ai_genai,Automation,242,60,0.2479,0.1978,0.306
+tinix_vn_trend,2026,rpa_low_code,ai_genai,"RPA / low-code (Power Automate, UiPath, n8n, Zapier)",242,7,0.0289,0.0141,0.0585
+tinix_vn_trend,2026,reporting,analytics_methods,Reporting,242,202,0.8347,0.7828,0.8762
+tinix_vn_trend,2026,kpi_metrics,analytics_methods,KPIs and metrics,242,99,0.4091,0.349,0.472
+tinix_vn_trend,2026,insights,analytics_methods,Insights and recommendations,242,158,0.6529,0.5909,0.7101
+tinix_vn_trend,2026,storytelling,analytics_methods,Data storytelling,242,22,0.0909,0.0608,0.1338
+tinix_vn_trend,2026,segmentation_cohort_funnel,analytics_methods,"Segmentation, cohort and funnel analysis",242,35,0.1446,0.1059,0.1945
+tinix_vn_trend,2026,root_cause,analytics_methods,Root-cause and diagnostic analysis,242,15,0.062,0.0379,0.0997
+tinix_vn_trend,2026,data_mining,analytics_methods,Data mining,242,27,0.1116,0.0778,0.1575
+tinix_vn_trend,2026,data_cleaning,analytics_methods,Data cleaning and preparation,242,64,0.2645,0.2129,0.3234
+tinix_vn_trend,2026,financial_analysis,analytics_methods,Financial / commercial analysis,242,54,0.2231,0.1752,0.2797
+tinix_vn_trend,2026,market_customer_analysis,analytics_methods,Market and customer analysis,242,41,0.1694,0.1274,0.2218
+tinix_vn_trend,2026,sap_erp,business_tools,SAP / ERP systems,242,41,0.1694,0.1274,0.2218
+tinix_vn_trend,2026,crm_salesforce,business_tools,CRM / Salesforce / HubSpot,242,27,0.1116,0.0778,0.1575
+tinix_vn_trend,2026,google_analytics,business_tools,Google Analytics / GA4 / Tag Manager,242,2,0.0083,0.0023,0.0296
+tinix_vn_trend,2026,product_analytics_tools,business_tools,"Product analytics tools (Mixpanel, Amplitude, Firebase, AppsFlyer)",242,1,0.0041,0.0007,0.023
+tinix_vn_trend,2026,ads_platforms,business_tools,"Ads platforms (Google Ads, Meta Ads, TikTok Ads)",242,3,0.0124,0.0042,0.0358
+tinix_vn_trend,2026,ecommerce_platforms,business_tools,"E-commerce platforms (Shopee, Lazada, Tiki, Shopify)",242,19,0.0785,0.0508,0.1194
+tinix_vn_trend,2026,jira_confluence,business_tools,Jira,242,3,0.0124,0.0042,0.0358
+tinix_vn_trend,2026,data_quality,data_management,Data quality,242,59,0.2438,0.194,0.3016
+tinix_vn_trend,2026,data_governance,data_management,Data governance and stewardship,242,24,0.0992,0.0676,0.1433
+tinix_vn_trend,2026,data_privacy_security,data_management,"Data privacy, security and compliance",242,40,0.1653,0.1238,0.2172
+tinix_vn_trend,2026,documentation,data_management,Documentation,242,24,0.0992,0.0676,0.1433
+tinix_vn_trend,2026,self_service_analytics,data_management,Self-service analytics / data literacy,242,1,0.0041,0.0007,0.023
+tinix_vn_trend,2026,communication,soft_skills,Communication,242,100,0.4132,0.353,0.4761
+tinix_vn_trend,2026,presentation,soft_skills,Presentation skills,242,73,0.3017,0.2473,0.3622
+tinix_vn_trend,2026,stakeholder_management,soft_skills,Stakeholder management,242,68,0.281,0.2281,0.3407
+tinix_vn_trend,2026,problem_solving,soft_skills,Problem solving / critical thinking,242,104,0.4298,0.369,0.4927
+tinix_vn_trend,2026,attention_to_detail,soft_skills,Attention to detail,242,45,0.186,0.142,0.2397
+tinix_vn_trend,2026,teamwork,soft_skills,Teamwork / collaboration,242,141,0.5826,0.5197,0.643
+tinix_vn_trend,2026,business_acumen,soft_skills,Business acumen / commercial sense,242,10,0.0413,0.0226,0.0744
+tinix_vn_trend,2026,ownership_proactive,soft_skills,Ownership / proactivity / self-starter,242,120,0.4959,0.4334,0.5584
+tinix_vn_trend,2026,time_management,soft_skills,Time management / prioritisation,242,30,0.124,0.0882,0.1715
+tinix_vn_trend,2026,curiosity_learning,soft_skills,Curiosity / continuous learning,242,40,0.1653,0.1238,0.2172
+tinix_vn_trend,2026,leadership_mentoring,soft_skills,Leadership / mentoring,242,46,0.1901,0.1456,0.2442
+tinix_vn_trend,2026,english,language,English,242,59,0.2438,0.194,0.3016
+tinix_vn_trend,2026,other_language,language,Japanese / Chinese / Korean,242,4,0.0165,0.0064,0.0417
+tinix_vn_trend,2026,agile_scrum,ways_of_working,Agile / Scrum,242,6,0.0248,0.0114,0.053
+tinix_vn_trend,2026,requirements_gathering,ways_of_working,Requirements gathering / business analysis,242,22,0.0909,0.0608,0.1338
+tinix_vn_trend,2026,process_improvement,ways_of_working,Process improvement / Lean Six Sigma,242,26,0.1074,0.0744,0.1528
+tinix_vn_trend,2026,project_management,ways_of_working,Project management,242,7,0.0289,0.0141,0.0585
+tinix_vn_trend,2026,any_ai,ai_genai,Any AI mention (generative_ai or ai_general),242,39,0.1612,0.1202,0.2127

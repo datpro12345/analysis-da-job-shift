@@ -1,0 +1,13 @@
+panel,cell_a,n_a,cell_b,n_b,base_rate_a,min_detectable_increase_pp
+P1_us_2022_vs_2026,US_2022,2545,US_2026,6381,0.05,1.5
+P1_us_2022_vs_2026,US_2022,2545,US_2026,6381,0.2,2.7
+P1_us_2022_vs_2026,US_2022,2545,US_2026,6381,0.5,3.3
+P2_vn_2022_vs_2026,VN_2022,141,VN_2026,242,0.05,8.8
+P2_vn_2022_vs_2026,VN_2022,141,VN_2026,242,0.2,13.2
+P2_vn_2022_vs_2026,VN_2022,141,VN_2026,242,0.5,14.6
+P3_us_vs_vn_2026,US_2026,6381,VN_2026,242,0.05,4.4
+P3_us_vs_vn_2026,US_2026,6381,VN_2026,242,0.2,7.6
+P3_us_vs_vn_2026,US_2026,6381,VN_2026,242,0.5,9.1
+S1_vn_platform_only,VN_platform_2022,45,VN_platform_2026,242,0.05,15.8
+S1_vn_platform_only,VN_platform_2022,45,VN_platform_2026,242,0.2,21.1
+S1_vn_platform_only,VN_platform_2022,45,VN_platform_2026,242,0.5,21.6

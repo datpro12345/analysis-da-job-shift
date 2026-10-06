@@ -1,0 +1,149 @@
+# Vietnamese function words and job-ad boilerplate syllables, one per line.
+# Used by themes.py together with scikit-learn's English stop-word list.
+# Syllable-level because the tokenizer splits on whitespace; bigrams in the
+# TF-IDF step recover compound words such as "dữ liệu" and "kinh nghiệm".
+và
+các
+của
+có
+được
+trong
+cho
+với
+là
+để
+từ
+theo
+về
+tại
+khi
+này
+đó
+những
+một
+hoặc
+như
+không
+đã
+sẽ
+cần
+phải
+nếu
+thì
+mà
+đến
+bị
+bởi
+nên
+do
+vì
+trên
+dưới
+sau
+trước
+ra
+vào
+lên
+xuống
+cũng
+đều
+rất
+hơn
+nhất
+hay
+thêm
+còn
+chỉ
+đang
+công
+việc
+công việc
+nhân
+viên
+chuyên
+ứng
+viên
+tuyển
+dụng
+yêu
+cầu
+mô
+tả
+quyền
+lợi
+lương
+thưởng
+chế
+độ
+làm
+tại
+giờ
+hành
+chính
+thứ
+tháng
+năm
+ngày
+tuần
+triệu
+vnd
+usd
+ty
+hội
+cơ hội
+tham
+gia
+tham gia
+bạn
+sơ
+hồ
+hồ sơ
+thoại
+điện
+điện thoại
+phỏng
+vấn
+phỏng vấn
+liên
+hệ
+liên hệ
+nghỉ
+tết
+lễ
+hiểm
+bảo hiểm
+địa
+điểm
+địa điểm
+sinh
+môi
+trường
+môi trường
+sự
+sử
+dụng
+sử dụng
+thực
+hiện
+thực hiện
+mô
+tả
+bộ
+phận
+bộ phận
+chi
+tiết
+chi tiết
+ứng
+viên
+tuyển
+dụng
+hoặc
+tương
+đương
+ưu
+tiên
+ưu tiên
+yêu cầu
+lợi
+quyền lợi

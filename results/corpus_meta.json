@@ -1,0 +1,85 @@
+{
+  "sources": {
+    "gsearch_us_2022": {
+      "n_raw": 5488,
+      "boilerplate_lines_removed": 0,
+      "boilerplate_distinct_lines": 0,
+      "exact_duplicates": 1448,
+      "near_duplicates": 332,
+      "too_short": 258
+    },
+    "wayback_vn_2022": {
+      "n_raw": 124,
+      "boilerplate_lines_removed": 24,
+      "boilerplate_distinct_lines": 2,
+      "exact_duplicates": 1,
+      "near_duplicates": 0,
+      "too_short": 0
+    },
+    "us_open_2026": {
+      "n_raw": 24659,
+      "rows_in_year": 83446,
+      "rows_us": 24659,
+      "rows_remote_country_unknown": 0,
+      "boilerplate_lines_removed": 4959,
+      "boilerplate_distinct_lines": 3,
+      "exact_duplicates": 4019,
+      "near_duplicates": 1283,
+      "too_short": 17
+    },
+    "tinix_vn_2022": {
+      "n_raw": 59,
+      "boilerplate_lines_removed": 3,
+      "boilerplate_distinct_lines": 1,
+      "exact_duplicates": 5,
+      "near_duplicates": 9,
+      "too_short": 0
+    },
+    "tinix_vn_2023": {
+      "n_raw": 55,
+      "boilerplate_lines_removed": 0,
+      "boilerplate_distinct_lines": 0,
+      "exact_duplicates": 3,
+      "near_duplicates": 2,
+      "too_short": 1
+    },
+    "tinix_vn_2024": {
+      "n_raw": 93,
+      "boilerplate_lines_removed": 0,
+      "boilerplate_distinct_lines": 0,
+      "exact_duplicates": 10,
+      "near_duplicates": 7,
+      "too_short": 0
+    },
+    "tinix_vn_2025": {
+      "n_raw": 136,
+      "boilerplate_lines_removed": 0,
+      "boilerplate_distinct_lines": 0,
+      "exact_duplicates": 7,
+      "near_duplicates": 2,
+      "too_short": 2
+    },
+    "tinix_vn_2026": {
+      "n_raw": 247,
+      "boilerplate_lines_removed": 0,
+      "boilerplate_distinct_lines": 0,
+      "exact_duplicates": 0,
+      "near_duplicates": 2,
+      "too_short": 3
+    }
+  },
+  "n_corpus": 23450,
+  "tinix_platform_totals_by_year": {
+    "2025": 160386,
+    "2024": 159049,
+    "2023": 129674,
+    "2022": 111033,
+    "2026": 46736
+  },
+  "parameters": {
+    "boilerplate_min_docs": 3,
+    "boilerplate_min_share": 0.05,
+    "near_dup_jaccard": 0.8,
+    "min_text_chars": 200
+  }
+}
