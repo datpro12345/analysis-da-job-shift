@@ -78,8 +78,13 @@ Check each dataset's licence and terms before you download it. Redistribute noth
 | Vietnam 2022 archived pages (source 4) | 184 pages obtained, 124 parsed as job pages | 123 | 96 |
 | US check, 2022 file and 2026 release (sources 1 and 5) | skills only | | 4,239 and 20,638 |
 
-The Vietnamese platform has 606,878 postings in total, 2022 to 2026. Its
-`year` field cannot be checked against the original pages. Benefits text is
+The Vietnamese platform has 606,878 postings in total, 2022 to 2026.
+Its 590 Data Analyst family title matches become 537 cleaned year-specific
+records (45 / 49 / 76 / 125 / 242), or 535 distinct text ids: two texts recur
+across adjacent years. Cleaning is per year, not global. The four main cells
+are unaffected. The pilot audit independently confirms US_2022 = 2,545,
+not 2,544; see [docs/PILOT50.md](docs/PILOT50.md).
+Its `year` field cannot be checked against the original pages. Benefits text is
 left out on every Vietnamese source so cells stay comparable. For the US 2026
 set a posting counts as US when its location text is "City, ST" with a real
 state code, "United States" or "USA", or a US metro phrase; "Remote" alone is

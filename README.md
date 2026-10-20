@@ -65,7 +65,7 @@ also has credits, licences and sizes.
 |---|---|---|
 | 1. Corpus building (`src/build_corpus.py`) | Cleans, removes personal data, boilerplate and duplicates, labels each posting | Two eras compare fairly only if both went through the same cleaning. |
 | 2. Rule extraction (`src/extract_deterministic.py`, `taxonomy/skills.yaml`) | One yes/no per skill (91 skills, English and Vietnamese patterns), plus years, degree, work mode, salary | Rules are cheap, repeatable and auditable: every hit traces to one pattern. |
-| 3. LLM annotation (stage 2, schema and guide only) | A model fills a JSON record per posting, each judgement with a verbatim quote | A quote makes each label checkable, and separates "required" from "mentioned". |
+| 3. LLM annotation (stage 2, pilot and validator built; full run pending) | A model fills a JSON record per posting, each judgement with a verbatim quote | A quote makes each label checkable, and separates "required" from "mentioned". |
 | 4. Statistics (`src/stats.py`, `src/compare_eras.py`) | Wilson intervals, Fisher exact test, Benjamini-Hochberg, effect sizes, bootstrap, re-weighting, size matching, power | The core problem is comparing two proportions when one sample is small. |
 | 5. Unsupervised themes (`src/themes.py`) | TF-IDF and NMF themes with a stability score | Layers 2 to 4 only count what we planned to look for; themes can surprise us. |
 
@@ -220,6 +220,20 @@ sh run_all.sh                                       # build, extract, compare, t
 
 Data paths come from `--data-root`, then `$DAJS_DATA_DIR`, then `./data/`.
 
+Stage 2 pilot (50 only, subscription OAuth through the logged-in `pi` CLI;
+never a paid API key):
+
+```bash
+.venv/bin/python tools/run_annotation_pilot.py --corpus "$DAJS_DATA_DIR/corpus/corpus.jsonl" --output out/pilot50/run
+.venv/bin/python src/validate_annotations.py --corpus "$DAJS_DATA_DIR/corpus/corpus.jsonl" --annotations out/pilot50/run/annotations.jsonl
+```
+
+The corpus must use the public source names in `src/extract_deterministic.py`.
+The runner excludes other sources, requires an ignored output directory inside
+the worktree, and records its sample and usage. Quotes, prompts and annotations
+stay untracked. See [docs/PILOT50.md](docs/PILOT50.md) for the measured pilot;
+it does not authorize the full annotation run.
+
 ### Privacy and licence guard
 
 `tools/public_safety_check.py` (standard library only) fails when a tracked
@@ -248,7 +262,7 @@ files is checked too. A test runs it on every `unittest` run. Two more modes:
 
 | Path | What it is |
 |---|---|
-| `src/` | `common.py`, `build_corpus.py`, `extract_deterministic.py`, `stats.py`, `compare_eras.py`, `themes.py`, `us_instrument_check.py` |
+| `src/` | `common.py`, `build_corpus.py`, `extract_deterministic.py`, `stats.py`, `compare_eras.py`, `themes.py`, `us_instrument_check.py`, `validate_annotations.py` |
 | `taxonomy/` | skill taxonomy (91 skills, 14 groups) and Vietnamese stop syllables |
 | `schema/` | stage 2 annotation schema |
 | `report/` | `index.html`: the interactive report, built from `results/` by `scripts/build_report.py` |

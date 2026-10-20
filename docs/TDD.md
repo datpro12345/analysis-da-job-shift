@@ -3,7 +3,7 @@
 Project: `da-job-shift`
 Document type: Technical Design Document
 Companion: `BRD.md` (requirements BR-01 to BR-16). Appendix A maps each requirement to its design and test.
-Status: stage 1 is built and rerun on public data only. Stages 2 and 3 are designed, not built.
+Status: stage 1 is built and rerun on public data only. Stage 2 has a 50-posting pilot and validator (see `PILOT50.md`); full annotation and agreement checks remain pending. Stage 3 is designed, not built.
 
 **How to read this document.** It explains how the problem was solved and teaches each method. Every method has the same parts: what it is, why we chose it, where it lives in the code, what it can tell you, what it cannot, and a small worked example. Numbers marked "real" come from `results/`. Numbers marked "toy" are invented to show the arithmetic.
 
@@ -22,7 +22,7 @@ We want to know how the Data Analyst job changed. The only evidence is the text 
 |---|---|---|---|---|
 | 1 | Corpus building | Are the postings clean and comparable? | `src/build_corpus.py`, `src/common.py` | 1 done |
 | 2 | Deterministic extraction | Which listed skills and fields appear in each posting? | `src/extract_deterministic.py`, `taxonomy/skills.yaml` | 1 done |
-| 3 | LLM structured annotation | What does the job holder do? Is a skill required? How is AI used? | `schema/jd_annotation.schema.json`, `docs/ANNOTATION_GUIDE.md` | 2 designed |
+| 3 | LLM structured annotation | What does the job holder do? Is a skill required? How is AI used? | `schema/jd_annotation.schema.json`, `docs/ANNOTATION_GUIDE.md`, `src/validate_annotations.py` | 2 pilot; full run pending |
 | 4 | Statistical comparison | Did a rate really change, and by how much? | `src/stats.py`, `src/compare_eras.py` | 1 done |
 | 5 | Unsupervised themes | What groups form that we did not plan for? | `src/themes.py` | 1 done |
 
@@ -101,7 +101,7 @@ Source: `panels.json`. The four main cells hold 9,309 postings. The corpus (kept
 | tinix_vn 2025 | 136 | 7 | 2 | 2 | 125 | 125 |
 | tinix_vn 2026 | 247 | 0 | 2 | 3 | 242 | 242 |
 
-Notes: the US 2026 files had 83,446 rows in 2026 and 24,659 passed the US location rule. The Tinix file has 606,878 rows. The loader keeps only titles in the family, so its "raw" count is already filtered. The Tinix total postings per year are 111,033 (2022), 129,674 (2023), 159,049 (2024), 160,386 (2025) and 46,736 (2026). The 2026 total is much lower. The sources do not say why (open question 3).
+Notes: the US 2026 files had 83,446 rows in 2026 and 24,659 passed the US location rule. The Tinix file has 606,878 rows. The cleaned Tinix rows sum to 537 across years, representing 535 distinct text ids: two texts recur in adjacent years because cleaning runs per year. Neither recurrence is in the four main cells. The pilot count audit (`PILOT50.md`) reproduces these counts and US_2022 = 2,545 from the raw source. The loader keeps only titles in the family, so its "raw" count is already filtered. The Tinix total postings per year are 111,033 (2022), 129,674 (2023), 159,049 (2024), 160,386 (2025) and 46,736 (2026). The 2026 total is much lower. The sources do not say why (open question 3).
 
 ### 2.2 The corpus record
 One JSON line per posting in `corpus.jsonl` (private).
@@ -234,7 +234,7 @@ Why not one model that adjusts for everything? A table of rates with a test is s
 
 **Why we chose it.** Rules cannot read meaning. A model can say what the job holder does, whether a skill is required, and how AI is used. The risk is that models over-read. So the design adds three guards: every judgement carries a verbatim quote, a program checks each record, and two independent annotators are compared.
 
-**Where it lives.** Design only: the schema, `docs/ANNOTATION_GUIDE.md`, and `stats.cohens_kappa`. The validator `validate_annotations.py` is named in the guide and does not exist yet. Stage 2 builds it.
+**Where it lives.** The schema, `docs/ANNOTATION_GUIDE.md`, `src/validate_annotations.py`, `tools/run_annotation_pilot.py`, and `stats.cohens_kappa`. The validator and 50-posting pilot are built; see `docs/PILOT50.md`. Full annotation and second-annotator agreement remain pending.
 
 **The record** (all of these fields are required):
 
@@ -247,7 +247,7 @@ Why not one model that adjusts for everything? A table of rates with a test is s
 | `seniority`, `years_experience`, `degree`, `languages`, `work_mode`, `salary` | Same ideas as layer 2, with levels |
 | `role_family` | `data_analyst`, `bi_analyst_developer`, `analytics_engineer`, `data_scientist`, `data_engineer`, `business_analyst`, `analytics_manager`, `other` |
 | `annotator_confidence` | 0 to 1. Under 0.6 goes to human review |
-| `evidence` | On every judgement: a `quote` of 3 to 300 characters that must be an exact piece of the posting |
+| `evidence` | On every judgement: a `quote` of 3 to 300 characters that must be a piece of the posting, allowing NFC normalisation and whitespace collapse only (guide section 5) |
 
 **The evidence rule.** If the model cannot quote it, it cannot claim it. This lets a person check any label without reading the whole posting. It also makes a disagreement easy to settle: compare the two quotes.
 
@@ -284,11 +284,11 @@ Plain description: each posting goes to worker A. A random fifth also goes to wo
 
 85% agreement looks high, but 60% of it is what two annotators would reach by chance because "no" is the common answer. Kappa 0.625 just passes the 0.60 target. Caution: when a label is very rare, kappa can look low even when agreement is high, so report counts and raw agreement beside kappa.
 
-**Worked example (toy): an evidence quote.** Posting text: "Experience with Power BI is a plus." Record: `skill_id` `power_bi`, `requirement_level` `preferred`, `quote` "Experience with Power BI is a plus". The validator checks that this exact string is in the text.
+**Worked example (toy): an evidence quote.** Posting text: "Experience with Power BI is a plus." Record: `skill_id` `power_bi`, `requirement_level` `preferred`, `quote` "Experience with Power BI is a plus". The validator checks that this string is in the text after NFC normalisation and whitespace collapse, as specified by the guide.
 
 **Cost and risk.**
 - Volume per the plan: all 9,309 postings in the four main cells, plus a 20% double-annotated sample (about 1,862). That is about 11,200 calls. Open question 2 asks if a smaller US sample is enough.
-- Cost per call = tokens in (fixed prompt + posting text) + tokens out (the JSON). The prompt size is not measured yet. A pilot on 50 postings will give a real figure. A fixed prompt prefix can be reused across calls to reduce cost. No price is estimated here.
+- Cost per call = tokens in (fixed prompt + posting text) + tokens out (the JSON). `docs/PILOT50.md` reports measured subscription-CLI usage, component token estimates, runtime and validation failures for 50 postings. A fixed prompt prefix may be cached; do not assume its observed cache rate holds for a full run. Full-run size and dates remain undecided.
 - Risks: a company blurb read as "AI as a tool" (guide categories and quotes); a posting that contains instructions (the prompt says the text is data); invented quotes (the validator); personal data in output (the validator); different results on a new model version (store model id, rerun the sample when it changes).
 
 ### 4.4 Layer 4: statistical comparison
@@ -426,7 +426,7 @@ The whole problem: a skill appears in k of n postings in cell a and in k of n in
 
 ### 5.1 The tests
 
-`unittest`, no network, no downloads. 136 test methods in eight files (`.venv/bin/python -m unittest discover -s tests`). They also run in CI on every push.
+`unittest`, no network, no downloads. 154 test methods in ten files (`.venv/bin/python -m unittest discover -s tests`). They also run in CI on every push.
 
 | File | Methods | What it checks |
 |---|---|---|
@@ -438,6 +438,8 @@ The whole problem: a skill appears in k of n postings in cell a and in k of n in
 | `tests/test_public_safety.py` | 27 | The guard catches each leak type (e-mail also written "[at]" or "%40", phone shapes, private and temp paths, secrets, data folders and file types including PDF, SVG text, big files, long fields, long paragraphs, any long JSON string, private deny-list); history mode finds a secret that was committed and deleted, non-noreply identities and co-author lines; it never prints the matched value; this repository passes it |
 | `tests/test_report.py` | 19 | The report page: embedded data equals the CSV files cell by cell, the "limits and risks" box under the title comes first and its numbers trace to the results files, the footer names the repository, the page equals a fresh build, prose numbers are looked up not typed, the platform-share note traces to `corpus_summary.csv`, only published theme tables are used, unglossed Vietnamese words are hidden, wording rules, nothing loads from outside, accessibility markup |
 | `tests/test_demo_and_fixture.py` | 4 | The synthetic corpus equals what its generator writes, every document is marked fictional and short, every cell is covered, and the demo runs layers 2, 4 and 5 end to end |
+| `tests/test_validate_annotations.py` | 11 | Schema, identity, taxonomy, quotes, years, evidence, personal data, warnings and CLI failure exit; fictional fixtures only |
+| `tests/test_annotation_pilot.py` | 7 | Fixed-seed balanced public sampling, order independence, duplicate rejection, prompt separation, Unicode JSONL and single-count usage including recovered transport failures |
 
 **Gaps.** The `html_to_job_text` rules are tested on small synthetic HTML only. The figure drawing and the full-size runs (millions of rows) are checked by reading the outputs, not by unit tests. Real-data numbers are not asserted in tests, because the downloads are not part of the repository.
 
@@ -585,7 +587,7 @@ Light and dark mode follow the system and a button. `tests/test_report.py` check
 | BR-01 | Panel P1, 92-skill table | 3, 4.4 | `compare_eras.skill_comparison`, `skill_shift_P1_us_2022_vs_2026.csv` | `test_stats.py`; same-instrument check (5.2) |
 | BR-02 | Panel P2 and S1, yearly trend | 3, 4.4 | `skill_shift_P2_*.csv`, `skill_shift_S1_*.csv`, `tinix_vn_yearly_trend.csv` | `test_stats.py`; P2 vs S1 direction check |
 | BR-03 | Panel P3 | 3, 4.4 | `skill_shift_P3_*.csv` | `test_stats.py` |
-| BR-04 | `requirement_level` field, guide rules | 4.3 | `schema/jd_annotation.schema.json`, `docs/ANNOTATION_GUIDE.md` | `test_schema_and_docs.py` (schema); validator and kappa pending |
+| BR-04 | `requirement_level` field, guide rules | 4.3 | `schema/jd_annotation.schema.json`, `docs/ANNOTATION_GUIDE.md` | `test_schema_and_docs.py` (schema); validator tests built; kappa pending |
 | BR-05 | `ai_roles` field, 7 categories | 4.3 | Same | `test_ai_role_categories`; annotation pending |
 | BR-06 | Wilson, Fisher, BH, bootstrap, power | 4.4.1 to 4.4.6 | `stats.py`, `power_check.csv` | `test_stats.py` |
 | BR-07 | Weights, size matching, S1, same-instrument | 3, 4.4.7, 5.2 | `stats.post_stratified_rate`, `size_matched_replication`, `us_instrument_check.py` | Weighting tests in `test_stats.py`; `CellAndStratumTests`; `UsInstrumentTests` |
@@ -608,4 +610,4 @@ Light and dark mode follow the system and a button. `tests/test_report.py` check
 2. **Stage 2 size.** Annotate all 9,309 postings (about 11,200 calls with the 20% second pass), or all 383 Vietnam postings plus a sample of the US cells? Which model and what budget?
 3. **Tinix 2026 total.** The platform has 46,736 postings for 2026 against 160,386 for 2025, and the Data Analyst share goes from 0.04% (2022) to 0.52% (2026). Is 2026 a partial year, or a different sample? The dataset card does not say. This affects how far VN_2026 is comparable.
 4. **Question wording.** Is "how the Data Analyst role moved from the late-2022 AI baseline to 2026" the wording to keep?
-5. **US 2022 count.** The tables use 2,545 (the file value).
+5. **US 2022 count (resolved by pilot audit).** 2,545 is correct, not 2,544: independent raw-source cleaning, the corpus and the extracted table agree, with 2,545 distinct ids. See `PILOT50.md` for the evidence and the Tinix record-versus-unique-text distinction.

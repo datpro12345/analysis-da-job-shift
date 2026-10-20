@@ -56,7 +56,7 @@ The README splits this into three parts:
 | Count skills and tools with fixed rules (mentions) | In | Reuse as a check | Report beside stage 2 |
 | Compare cells with statistics (US 2022 vs 2026, Vietnam 2022 vs 2026, Vietnam vs US 2026) | In (mentions) | Repeat on annotated fields | Final tables |
 | Unsupervised themes | In | None | Read against the taxonomy |
-| LLM structured annotation (tasks, AI roles, required vs mentioned) | Schema and guide only | In | Use |
+| LLM structured annotation (tasks, AI roles, required vs mentioned) | Schema, guide, validator and 50-posting pilot; full run pending | In | Use |
 | Two-annotator agreement (Cohen's kappa) | Function only | In | Report |
 | Written report | Not started | Not started | In |
 
@@ -148,7 +148,7 @@ Extra cells for checks: VN_platform_2022 (45) and VN_platform_2026 (242), the Ti
 | AC-5 | No e-mail, phone, private path or posting text in committed files | `tools/public_safety_check.py` and `test_public_safety.py` | Met |
 | AC-6 | Rerun gives the same tables | `run_all.sh` with fixed seeds | Met (two full runs compared) |
 | AC-7 | Stage 2: kappa of 0.60 or higher for each field before the full run | `stats.cohens_kappa` on a double-annotated sample | Pending |
-| AC-8 | Stage 2: every annotation record passes validation (schema, quote found in text, taxonomy ids, no personal data) | `validate_annotations.py` (to be written) | Pending |
+| AC-8 | Stage 2: every annotation record passes validation (schema, quote found in text, taxonomy ids, no personal data) | `src/validate_annotations.py`; pilot findings in `PILOT50.md` | Validator built; full-run acceptance pending |
 | AC-9 | Stage 3: every claim in the report is labelled "mentioned" or "required" | Report review | Pending |
 | AC-10 | A reader can explain each method in one minute after reading the TDD | Reader feedback | Open |
 
